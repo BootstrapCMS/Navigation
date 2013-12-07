@@ -149,7 +149,7 @@ class Navigation {
         // check if we are forcing the item to the start
         if ($first) {
             // add the item to the start of the array
-            $this->main[$type] = array_merge($this->main[$type], array($item));
+            $this->main[$type] = array_merge(array($item), $this->main[$type]);
         } else {
             // add the item to the end of the array
             $this->main[$type][] = $item;
@@ -166,7 +166,7 @@ class Navigation {
         // check if we are forcing the item to the start
         if ($first) {
             // add the item to the start of the array
-            $this->bar[$type] = array_merge($this->bar[$type], array($item));
+            $this->bar[$type] = array_merge(array($item), $this->bar[$type]);
         } else {
             // add the item to the end of the array
             $this->bar[$type][] = $item;
