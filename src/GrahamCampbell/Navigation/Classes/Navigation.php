@@ -25,7 +25,7 @@ use Illuminate\Routing\UrlGenerator;
 use Illuminate\Config\Repository;
 use GrahamCampbell\HTMLMin\Classes\HTMLMin;
 
-abstract class Navigation {
+class Navigation {
 
     /**
      * The items in the main nav bar.
