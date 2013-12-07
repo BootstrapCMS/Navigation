@@ -47,7 +47,7 @@ class NavigationServiceProvider extends ServiceProvider {
      */
     public function register() {
         $this->app['navigation'] = $this->app->share(function($app) {
-            return new Classes\Navigation($app['request'], $app['url'], $app['config'], $app['htmlmin']);
+            return new Classes\Navigation($app['event'], $app['request'], $app['url'], $app['config'], $app['htmlmin']);
         });
     }
 

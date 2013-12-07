@@ -20,6 +20,7 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
 
+use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Routing\UrlGenerator;
 use Illuminate\Config\Repository;
@@ -40,6 +41,13 @@ class Navigation {
      * @var array
      */
     protected $bar = array();
+
+    /**
+     * The event instance.
+     *
+     * @var \Illuminate\Events\Dispatcher
+     */
+    protected $event;
 
     /**
      * The request instance.
@@ -72,13 +80,15 @@ class Navigation {
     /**
      * Create a new instance.
      *
+     * @param  \Illuminate\Events\Dispatcher  $event
      * @param  \Illuminate\Http\Request  $request
      * @param  \Illuminate\Routing\UrlGenerator  $url
      * @param  \Illuminate\Config\Repository  $config
      * @param  \GrahamCampbell\HTMLMin\Classes\HTMLMin  $htmlmin
      * @return void
      */
-    public function __construct(Request $request, UrlGenerator $url, Repository $config, HTMLMin $htmlmin) {
+    public function __construct(Dispatcher $event, Request $request, UrlGenerator $url, Repository $config, HTMLMin $htmlmin) {
+        $this->event = $event;
         $this->request = $request;
         $this->url = $url;
         $this->config = $config;
