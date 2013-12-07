@@ -43,11 +43,11 @@ class Navigation {
     protected $bar = array();
 
     /**
-     * The event instance.
+     * The events instance.
      *
      * @var \Illuminate\Events\Dispatcher
      */
-    protected $event;
+    protected $events;
 
     /**
      * The request instance.
@@ -80,15 +80,15 @@ class Navigation {
     /**
      * Create a new instance.
      *
-     * @param  \Illuminate\Events\Dispatcher  $event
+     * @param  \Illuminate\Events\Dispatcher  $events
      * @param  \Illuminate\Http\Request  $request
      * @param  \Illuminate\Routing\UrlGenerator  $url
      * @param  \Illuminate\Config\Repository  $config
      * @param  \GrahamCampbell\HTMLMin\Classes\HTMLMin  $htmlmin
      * @return void
      */
-    public function __construct(Dispatcher $event, Request $request, UrlGenerator $url, Repository $config, HTMLMin $htmlmin) {
-        $this->event = $event;
+    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, Repository $config, HTMLMin $htmlmin) {
+        $this->events = $events;
         $this->request = $request;
         $this->url = $url;
         $this->config = $config;
@@ -97,7 +97,7 @@ class Navigation {
 
     public function getMain($type = 'default') {
         // fire event that can be hooked to add items to the nav bar
-        $this->event->fire('navigation.main', array(array('type' => $type)));
+        $this->events->fire('navigation.main', array(array('type' => $type)));
 
         // check if the type exists in the main array
         if ($type !== 'default' && !array_key_exists($type, $this->main)) {
@@ -119,7 +119,7 @@ class Navigation {
 
     public function getBar($type = 'default') {
         // fire event that can be hooked to add items to the nav bar
-        $this->event->fire('navigation.bar', array(array('type' => $type)));
+        $this->events->fire('navigation.bar', array(array('type' => $type)));
 
         // check if the type exists in the bar array
         if ($type !== 'default' && !array_key_exists($type, $this->bar)) {
