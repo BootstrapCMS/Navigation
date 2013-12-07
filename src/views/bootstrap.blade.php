@@ -19,23 +19,25 @@
                 @endforeach
             </ul>
         </div>
-        <div id="bar-nav">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        {{ $side }} <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                        @foreach($bar as $item)
-                            <li>
-                                <a href="{{ $item['url'] }}">
-                                    {{ ((!$item['icon'] == '') ? '<i class="fa fa-'.$item['icon'].' fa-fw"></i> ' : '') }}{{ $item['title'] }}
-                                </a>
-                            </li>
-                        @endforeach
-                    </ul>
-                </li>
-            </ul>
-        </div>
+        @if ($bar)
+            <div id="bar-nav">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            {{ $side }} <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            @foreach($bar as $item)
+                                <li>
+                                    <a href="{{ $item['url'] }}">
+                                        {{ ((!$item['icon'] == '') ? '<i class="fa fa-'.$item['icon'].' fa-fw"></i> ' : '') }}{{ $item['title'] }}
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        @endif
     </div>
 </div>

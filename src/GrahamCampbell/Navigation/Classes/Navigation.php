@@ -165,8 +165,12 @@ abstract class Navigation {
 
     public function getHTML($maintype = 'default', $bartype = 'default', array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)) {
         // get the nav bar arrays
-        $mainnav = $this->getMain($type);
-        $barnav = $this->getMain($type);
+        $mainnav = $this->getMain($maintype);
+        if ($bartype) {
+            $barnav = $this->getMain($bartype);
+        } else {
+            $barnav = false;
+        }
 
         // return the html nav bar
         return $this->htmlmin->view($this->config['navigation::view'], array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
