@@ -139,7 +139,7 @@ class Navigation {
         return $this->process($nav);
     }
 
-    public function addMain($type = 'default', array $item, $first = false) {
+    public function addMain(array $item, $type = 'default', $first = false) {
         // check if the type exists in the main array
         if (!array_key_exists($type, $this->main)) {
             // add it if it doesn't exists
@@ -156,7 +156,7 @@ class Navigation {
         }
     }
 
-    public function addBar($type = 'default', array $item, $first = false) {
+    public function addBar(array $item, $type = 'default', $first = false) {
         // check if the type exists in the bar array
         if (!array_key_exists($type, $this->bar)) {
             // add it if it doesn't exists
@@ -173,11 +173,11 @@ class Navigation {
         }
     }
 
-    public function getHTML($maintype = 'default', $bartype = 'default', array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)) {
+    public function getHTML($maintype = 'default', $bartype = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)) {
         // get the nav bar arrays
         $mainnav = $this->getMain($maintype);
         if ($bartype) {
-            $barnav = $this->getMain($bartype);
+            $barnav = $this->getBar($bartype);
         } else {
             $barnav = false;
         }
