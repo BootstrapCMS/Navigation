@@ -183,7 +183,7 @@ class Navigation {
         }
 
         // return the html nav bar
-        return $this->htmlmin->view($this->config['navigation::view'], array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
+        return $this->htmlmin->make($this->config['navigation::view'], array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
     }
 
     protected function active(array $nav) {
