@@ -90,6 +90,11 @@ abstract class Navigation {
         $this->event->fire('navigation.main', array(array('type' => $type)));
 
         // check if the type exists in the main array
+        if ($type !== 'default' && !array_key_exists($type, $this->main)) {
+            // use the default type
+            $type = 'default';
+        }
+
         if (!array_key_exists($type, $this->main)) {
             // add it if it doesn't exists
             $this->main[$type] = array();
@@ -107,6 +112,11 @@ abstract class Navigation {
         $this->event->fire('navigation.bar', array(array('type' => $type)));
 
         // check if the type exists in the bar array
+        if ($type !== 'default' && !array_key_exists($type, $this->bar)) {
+            // use the default type
+            $type = 'default';
+        }
+
         if (!array_key_exists($type, $this->bar)) {
             // add it if it doesn't exists
             $this->bar[$type] = array();
