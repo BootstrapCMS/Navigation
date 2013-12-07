@@ -178,6 +178,9 @@ class Navigation {
         $mainnav = $this->getMain($maintype);
         if ($bartype) {
             $barnav = $this->getBar($bartype);
+            if (empty($barnav)) {
+                $barnav = false;
+            }
         } else {
             $barnav = false;
         }
