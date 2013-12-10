@@ -12,7 +12,7 @@
     "require": {
         "php": ">=5.3.3",
         "orchestra/testbench": "~2",
-        "graham-campbell/htmlmin": "0.3.*-alpha"
+        "graham-campbell/htmlmin": "dev-develop"
     },
     "require-dev": {
         "mockery/mockery": "0.8.*@stable",
