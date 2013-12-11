@@ -33,6 +33,6 @@ return array(
     |
     */
 
-    'view' => 'navigation::bootstrap',
+    'view' => 'navigation::bootstrap'
 
 );
