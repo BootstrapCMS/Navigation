@@ -95,6 +95,12 @@ class Navigation {
         $this->htmlmin = $htmlmin;
     }
 
+    /**
+     * Get the main navigation array.
+     *
+     * @param  string  $type
+     * @return array
+     */
     public function getMain($type = 'default') {
         // fire event that can be hooked to add items to the nav bar
         $this->events->fire('navigation.main', array(array('type' => $type)));
@@ -117,6 +123,12 @@ class Navigation {
         return $this->process($nav);
     }
 
+    /**
+     * Get the bar navigation array.
+     *
+     * @param  string  $type
+     * @return array
+     */
     public function getBar($type = 'default') {
         // fire event that can be hooked to add items to the nav bar
         $this->events->fire('navigation.bar', array(array('type' => $type)));
@@ -139,6 +151,14 @@ class Navigation {
         return $this->process($nav);
     }
 
+    /**
+     * Add an item to the main navigation array.
+     *
+     * @param  array   $item
+     * @param  string  $type
+     * @param  bool    $first
+     * @return void
+     */
     public function addMain(array $item, $type = 'default', $first = false) {
         // check if the type exists in the main array
         if (!array_key_exists($type, $this->main)) {
@@ -156,6 +176,14 @@ class Navigation {
         }
     }
 
+    /**
+     * Add an item to the bar navigation array.
+     *
+     * @param  array   $item
+     * @param  string  $type
+     * @param  bool    $first
+     * @return void
+     */
     public function addBar(array $item, $type = 'default', $first = false) {
         // check if the type exists in the bar array
         if (!array_key_exists($type, $this->bar)) {
@@ -173,6 +201,15 @@ class Navigation {
         }
     }
 
+
+    /**
+     * Get the navigation bar html.
+     *
+     * @param  string  $maintype
+     * @param  string|bool   $bartype
+     * @param  array  $data
+     * @return string
+     */
     public function getHTML($maintype = 'default', $bartype = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)) {
         // get the nav bar arrays
         $mainnav = $this->getMain($maintype);
@@ -189,6 +226,12 @@ class Navigation {
         return $this->htmlmin->make($this->config['navigation::view'], array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
     }
 
+    /**
+     * Check if each item is active.
+     *
+     * @param  array  $nav
+     * @return array
+     */
     protected function active(array $nav) {
         // check if each item is active
         foreach ($nav as $key => $value) {
@@ -212,6 +255,12 @@ class Navigation {
         return $nav;
     }
 
+    /**
+     * Convert slugs to urls.
+     *
+     * @param  array  $nav
+     * @return array
+     */
     protected function process(array $nav) {
         // convert slugs to urls
         foreach ($nav as $key => $value) {
