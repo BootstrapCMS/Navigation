@@ -8,7 +8,7 @@ CHANGE LOG
 * Added unit tests
 
 
-## V0.1.1 Alpha (Upcoming)
+## V0.1.1 Alpha (12/12/2013)
 #### Minor Release
 
 * Updated doc blocks
