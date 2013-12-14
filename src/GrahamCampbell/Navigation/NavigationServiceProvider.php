@@ -22,7 +22,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class NavigationServiceProvider extends ServiceProvider {
+class NavigationServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -36,7 +37,8 @@ class NavigationServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         $this->package('graham-campbell/navigation');
     }
 
@@ -45,8 +47,9 @@ class NavigationServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function register() {
-        $this->app['navigation'] = $this->app->share(function($app) {
+    public function register()
+    {
+        $this->app['navigation'] = $this->app->share(function ($app) {
             return new Classes\Navigation($app['events'], $app['request'], $app['url'], $app['config'], $app['htmlmin']);
         });
     }
@@ -56,7 +59,8 @@ class NavigationServiceProvider extends ServiceProvider {
      *
      * @return array
      */
-    public function provides() {
+    public function provides()
+    {
         return array('navigation');
     }
 }
