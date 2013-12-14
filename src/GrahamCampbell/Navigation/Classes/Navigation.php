@@ -216,7 +216,7 @@ class Navigation
      * @param  array  $data
      * @return string
      */
-    public function getHTML($maintype = 'default', $bartype = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)) {
+    public function getHTML($maintype = 'default', $bartype = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true))
     {
         // get the nav bar arrays
         $mainnav = $this->getMain($maintype);
