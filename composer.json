@@ -1,6 +1,6 @@
 {
     "name": "graham-campbell/navigation",
-    "description": "Navigation Is A Navigation Bar Generator For Laravel 4",
+    "description": "Navigation Is A Navigation Bar Generator For Laravel 4.1",
     "keywords": ["laravel", "framework", "navigation generator", "navigation", "navigation bar", "Navigation", "Laravel Navigation", "Laravel-Navigation", "Graham Campbell", "GrahamCampbell"],
     "license": "Apache License 2.0",
     "authors": [
@@ -10,9 +10,9 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "orchestra/testbench": "2.0.*|2.1.*",
-        "graham-campbell/htmlmin": "0.3.*"
+        "php": ">=5.4.7",
+        "orchestra/testbench": "2.1.*",
+        "graham-campbell/htmlmin": "0.4.*"
     },
     "require-dev": {
         "mockery/mockery": "0.8.*",

@@ -12,7 +12,7 @@ Laravel Navigation
 
 ## What Is Laravel Navigation?
 
-Laravel Navigation is a navigation bar generator for [Laravel 4](http://laravel.com).  
+Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://laravel.com).  
 
 * Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Navigation relies on my [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) package.  
@@ -25,8 +25,8 @@ Laravel Navigation is a navigation bar generator for [Laravel 4](http://laravel.
 
 ## System Requirements
 
-* PHP 5.3.3+, 5.4+ or PHP 5.5+ is required.
-* You will need [Laravel 4](http://laravel.com) because this package is designed for it.  
+* PHP 5.4.7+ or PHP 5.5+ is required.
+* You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Navigation.  
 
 
