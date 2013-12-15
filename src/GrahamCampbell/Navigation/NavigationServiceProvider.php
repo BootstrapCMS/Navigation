@@ -24,7 +24,6 @@ use Illuminate\Support\ServiceProvider;
 
 class NavigationServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *

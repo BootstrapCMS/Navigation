@@ -28,7 +28,6 @@ use GrahamCampbell\HTMLMin\Classes\HTMLMin;
 
 class Navigation
 {
-
     /**
      * The items in the main nav bar.
      *
