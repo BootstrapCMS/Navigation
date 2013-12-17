@@ -25,7 +25,7 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 ## System Requirements
 
-* PHP 5.4.7+ or PHP 5.5+ is required.
+* PHP 5.4.7+ or PHP 5.5+ is required.  
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Navigation.  
 
@@ -34,23 +34,31 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 Please check the system requirements before installing Laravel Navigation.  
 
-To get the latest version of Laravel Navigation, simply require it in your `composer.json` file.
+To get the latest version of Laravel Navigation, simply require it in your `composer.json` file.  
 
-`"graham-campbell/navigation": "dev-master"`
+`"graham-campbell/navigation": "dev-master"`  
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.  
 
-You will need to register the [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) service provider before you attempt to load the Laravel Navigation service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+You will need to register the [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) service provider before you attempt to load the Laravel Navigation service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
 
-`'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`
+`'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`  
 
-Once Laravel Navigation is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+Once Laravel Navigation is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
 
-`'GrahamCampbell\Navigation\NavigationServiceProvider'`
+`'GrahamCampbell\Navigation\NavigationServiceProvider'`  
 
-You can register the Navigation facade in the `aliases` key of your `app/config/app.php` file if you like.
+You can register the Navigation facade in the `aliases` key of your `app/config/app.php` file if you like.  
 
-`'Navigation' => 'GrahamCampbell\Navigation\Facades\Navigation'`
+`'Navigation' => 'GrahamCampbell\Navigation\Facades\Navigation'`  
+
+
+## Usage
+
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Navigation
+) for Laravel Navigation.  
+
+You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).  
 
 
 ## Updating Your Fork
