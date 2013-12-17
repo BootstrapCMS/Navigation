@@ -3,10 +3,10 @@ Laravel Navigation
 
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/Laravel-Navigation/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Navigation.png?branch=master)](https://travis-ci.org/GrahamCampbell/Laravel-Navigation)
-[![Latest Version](https://poser.pugx.org/graham-campbell/navigation/v/stable.png)](https://packagist.org/packages/graham-campbell/navigation)
-[![Total Downloads](https://poser.pugx.org/graham-campbell/navigation/downloads.png)](https://packagist.org/packages/graham-campbell/navigation)
+[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Navigation.png?branch=develop)](https://travis-ci.org/GrahamCampbell/Laravel-Navigation)
+[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Navigation/badge.png?branch=develop)](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation/badges/quality-score.png?s=00adc2bf1ad673660b1955e237fbf8ce7979dca2)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation)
+[![Latest Version](https://poser.pugx.org/graham-campbell/navigation/v/stable.png)](https://packagist.org/packages/graham-campbell/navigation)
 [![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation)
 
 
@@ -16,11 +16,11 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 * Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Navigation relies on my [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) package.  
-* Laravel Navigation uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Navigation) to run tests to check if it's working as it should.  
+* Laravel Navigation uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Navigation) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
 * Laravel Navigation uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
 * Laravel Navigation uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* Laravel Navigation provides a [change log](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Navigation/wiki).  
-* Laravel Navigation is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md).  
+* Laravel Navigation provides a [change log](https://github.com/GrahamCampbell/Laravel-Navigation/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Navigation/wiki).  
+* Laravel Navigation is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Navigation/blob/develop/LICENSE.md).  
 
 
 ## System Requirements
