@@ -40,7 +40,8 @@
     },
     "autoload": {
         "psr-0": {
-            "GrahamCampbell\\Navigation": "src/"
+            "GrahamCampbell\\Navigation": "src/",
+            "GrahamCampbell\\Tests\\Navigation": "tests/"
         }
     },
     "extra": {
