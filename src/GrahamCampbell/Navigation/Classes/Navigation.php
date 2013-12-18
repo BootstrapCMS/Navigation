@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Navigation\Classes;
+<?php
 
 /**
  * This file is part of Laravel Navigation by Graham Campbell.
@@ -12,13 +12,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- * @package    Laravel-Navigation
- * @author     Graham Campbell
- * @license    Apache License
- * @copyright  Copyright 2013 Graham Campbell
- * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
+
+namespace GrahamCampbell\Navigation\Classes;
 
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
@@ -26,6 +22,15 @@ use Illuminate\Routing\UrlGenerator;
 use Illuminate\Config\Repository;
 use GrahamCampbell\HTMLMin\Classes\HTMLMin;
 
+/**
+ * This is the navigation class.
+ *
+ * @package    Laravel-Navigation
+ * @author     Graham Campbell
+ * @copyright  Copyright 2013 Graham Campbell
+ * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/develop/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/Laravel-Navigation
+ */
 class Navigation
 {
     /**
