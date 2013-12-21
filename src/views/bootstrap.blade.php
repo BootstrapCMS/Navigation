@@ -6,7 +6,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ $main[0]['url'] }}">{{ $title }}</a>
+            <a class="navbar-brand" href="{{ $main[0]['url'] }}">{{{ $title }}}</a>
         </div>
         <div class="collapse navbar-collapse">
             <div id="main-nav">
@@ -14,7 +14,7 @@
                     @foreach($main as $item)
                         <li{{ ($item['active'] ? ' class="active"' : '') }}>
                             <a href="{{ $item['url'] }}">
-                                {{ ((!$item['icon'] == '') ? '<i class="fa fa-'.$item['icon'].' fa-inverse fa-fw"></i> ' : '') }}{{ $item['title'] }}
+                                {{{ ((!$item['icon'] == '') ? '<i class="fa fa-'.$item['icon'].' fa-inverse fa-fw"></i> ' : '') }}}{{{ $item['title'] }}}
                             </a>
                         </li>
                     @endforeach
@@ -25,13 +25,13 @@
                     <ul class="nav navbar-nav navbar-right">
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                                {{ $side }} <b class="caret"></b>
+                                {{{ $side }}} <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
                                 @foreach($bar as $item)
                                     <li>
                                         <a href="{{ $item['url'] }}">
-                                            {{ ((!$item['icon'] == '') ? '<i class="fa fa-'.$item['icon'].' fa-fw"></i> ' : '') }}{{ $item['title'] }}
+                                            {{{ ((!$item['icon'] == '') ? '<i class="fa fa-'.$item['icon'].' fa-fw"></i> ' : '') }}}{{{ $item['title'] }}}
                                         </a>
                                     </li>
                                 @endforeach
