@@ -53,8 +53,24 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app['navigation'] = $this->app->share(function ($app) {
-            return new Classes\Navigation($app['events'], $app['request'], $app['url'], $app['config'], $app['htmlmin']);
+        $this->registerNavigation();
+    }
+
+    /**
+     * Register the navigation class.
+     *
+     * @return void
+     */
+    protected function registerNavigation()
+    {
+        $this->app->bindShared('navigation', function ($app) {
+            $events = $app['events'];
+            $request = $app['request'];
+            $url = $app['url'];
+            $config = $app['config'];
+            $htmlmin = $app['htmlmin'];
+
+            return new Classes\Navigation($events, $request, $url, $config, $htmlmin);
         });
     }
 
