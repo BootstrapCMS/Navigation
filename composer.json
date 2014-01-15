@@ -35,7 +35,7 @@
         "laravel/framework": "4.1.*",
         "symfony/config": "2.4.*",
         "symfony/filesystem": "2.4.*",
-        "graham-campbell/htmlmin": "0.4.*"
+        "graham-campbell/htmlmin": "1.0.*"
     },
     "require-dev": {
         "graham-campbell/testbench": "0.2.*"
