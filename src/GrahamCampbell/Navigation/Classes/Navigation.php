@@ -165,7 +165,7 @@ class Navigation
      * @param  array   $item
      * @param  string  $type
      * @param  bool    $first
-     * @return void
+     * @return $this
      */
     public function addMain(array $item, $type = 'default', $first = false)
     {
@@ -183,6 +183,8 @@ class Navigation
             // add the item to the end of the array
             $this->main[$type][] = $item;
         }
+
+        return $this;
     }
 
     /**
@@ -191,7 +193,7 @@ class Navigation
      * @param  array   $item
      * @param  string  $type
      * @param  bool    $first
-     * @return void
+     * @return $this
      */
     public function addBar(array $item, $type = 'default', $first = false)
     {
@@ -209,8 +211,9 @@ class Navigation
             // add the item to the end of the array
             $this->bar[$type][] = $item;
         }
-    }
 
+        return $this;
+    }
 
     /**
      * Get the navigation bar html.
