@@ -25,7 +25,7 @@ use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
  * @package    Laravel-Navigation
  * @author     Graham Campbell
  * @copyright  Copyright 2013-2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/develop/LICENSE.md
+ * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
 abstract class AbstractFacadeTestCase extends AbstractTestCase
