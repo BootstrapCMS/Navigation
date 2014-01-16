@@ -19,7 +19,7 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 * Laravel Navigation uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Navigation) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
 * Laravel Navigation uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
 * Laravel Navigation uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* Laravel Navigation provides a [change log](https://github.com/GrahamCampbell/Laravel-Navigation/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Navigation/wiki).  
+* Laravel Navigation provides a [change log](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Navigation/wiki).  
 * Laravel Navigation is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md).  
 
 
@@ -82,7 +82,7 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 ## Pull Requests
 
-Please submit pull requests against the develop branch.  
+Please review these guidelines before submitting any pull requests.  
 
 * Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
 * Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
