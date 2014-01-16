@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-return array(
+namespace GrahamCampbell\Tests\Navigation;
 
-    /*
-    |--------------------------------------------------------------------------
-    | Navigation View
-    |--------------------------------------------------------------------------
-    |
-    | This option specifies the view to use.
-    |
-    | Default: 'navigation::bootstrap'
-    |
-    */
+use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
 
-    'view' => 'navigation::bootstrap'
-
-);
+/**
+ * This is the service provider test class.
+ *
+ * @package    Laravel-Navigation
+ * @author     Graham Campbell
+ * @copyright  Copyright 2013-2014 Graham Campbell
+ * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/Laravel-Navigation
+ */
+class ServiceProviderTest extends AbstractTestCase
+{
+    use ServiceProviderTestCaseTrait;
+}

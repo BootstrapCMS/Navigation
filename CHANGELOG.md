@@ -5,6 +5,9 @@ CHANGE LOG
 ## V0.2 Alpha (Upcoming)
 #### Major Release
 
+* Dropped Laravel 4.0 support
+* Travis and Scrutinizer tweaks
+* Coding style fixes
 * Added unit tests
 
 

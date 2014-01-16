@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Navigation\Facades;
+namespace GrahamCampbell\Tests\Navigation;
 
-use Illuminate\Support\Facades\Facade;
+use GrahamCampbell\TestBench\Classes\AbstractLaravelTestCase as TestCase;
 
 /**
- * This is the navigation facade class.
+ * This is the abstract test case class.
  *
  * @package    Laravel-Navigation
  * @author     Graham Campbell
@@ -27,15 +27,37 @@ use Illuminate\Support\Facades\Facade;
  * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
-class Navigation extends Facade
+abstract class AbstractTestCase extends TestCase
 {
     /**
-     * Get the registered name of the component.
+     * Get the application base path.
      *
      * @return string
      */
-    protected static function getFacadeAccessor()
+    protected function getBasePath()
     {
-        return 'navigation';
+        return __DIR__.'/../../../../src';
+    }
+
+    /**
+     * Get the required service providers.
+     *
+     * @return array
+     */
+    protected function getRequiredServiceProviders()
+    {
+        return array(
+            'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'
+        );
+    }
+
+    /**
+     * Get the service provider class.
+     *
+     * @return string
+     */
+    protected function getServiceProviderClass()
+    {
+        return 'GrahamCampbell\Navigation\NavigationServiceProvider';
     }
 }

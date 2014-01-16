@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Navigation\Classes;
+<?php
 
 /**
  * This file is part of Laravel Navigation by Graham Campbell.
@@ -12,13 +12,9 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- * @package    Laravel-Navigation
- * @author     Graham Campbell
- * @license    Apache License
- * @copyright  Copyright 2013 Graham Campbell
- * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
+
+namespace GrahamCampbell\Navigation\Classes;
 
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
@@ -26,8 +22,17 @@ use Illuminate\Routing\UrlGenerator;
 use Illuminate\Config\Repository;
 use GrahamCampbell\HTMLMin\Classes\HTMLMin;
 
-class Navigation {
-
+/**
+ * This is the navigation class.
+ *
+ * @package    Laravel-Navigation
+ * @author     Graham Campbell
+ * @copyright  Copyright 2013-2014 Graham Campbell
+ * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/Laravel-Navigation
+ */
+class Navigation
+{
     /**
      * The items in the main nav bar.
      *
@@ -87,7 +92,8 @@ class Navigation {
      * @param  \GrahamCampbell\HTMLMin\Classes\HTMLMin  $htmlmin
      * @return void
      */
-    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, Repository $config, HTMLMin $htmlmin) {
+    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, Repository $config, HTMLMin $htmlmin)
+    {
         $this->events = $events;
         $this->request = $request;
         $this->url = $url;
@@ -101,7 +107,8 @@ class Navigation {
      * @param  string  $type
      * @return array
      */
-    public function getMain($type = 'default') {
+    public function getMain($type = 'default')
+    {
         // fire event that can be hooked to add items to the nav bar
         $this->events->fire('navigation.main', array(array('type' => $type)));
 
@@ -129,7 +136,8 @@ class Navigation {
      * @param  string  $type
      * @return array
      */
-    public function getBar($type = 'default') {
+    public function getBar($type = 'default')
+    {
         // fire event that can be hooked to add items to the nav bar
         $this->events->fire('navigation.bar', array(array('type' => $type)));
 
@@ -157,9 +165,10 @@ class Navigation {
      * @param  array   $item
      * @param  string  $type
      * @param  bool    $first
-     * @return void
+     * @return $this
      */
-    public function addMain(array $item, $type = 'default', $first = false) {
+    public function addMain(array $item, $type = 'default', $first = false)
+    {
         // check if the type exists in the main array
         if (!array_key_exists($type, $this->main)) {
             // add it if it doesn't exists
@@ -174,6 +183,8 @@ class Navigation {
             // add the item to the end of the array
             $this->main[$type][] = $item;
         }
+
+        return $this;
     }
 
     /**
@@ -182,9 +193,10 @@ class Navigation {
      * @param  array   $item
      * @param  string  $type
      * @param  bool    $first
-     * @return void
+     * @return $this
      */
-    public function addBar(array $item, $type = 'default', $first = false) {
+    public function addBar(array $item, $type = 'default', $first = false)
+    {
         // check if the type exists in the bar array
         if (!array_key_exists($type, $this->bar)) {
             // add it if it doesn't exists
@@ -199,8 +211,9 @@ class Navigation {
             // add the item to the end of the array
             $this->bar[$type][] = $item;
         }
-    }
 
+        return $this;
+    }
 
     /**
      * Get the navigation bar html.
@@ -210,7 +223,8 @@ class Navigation {
      * @param  array  $data
      * @return string
      */
-    public function getHTML($maintype = 'default', $bartype = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)) {
+    public function getHTML($maintype = 'default', $bartype = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true))
+    {
         // get the nav bar arrays
         $mainnav = $this->getMain($maintype);
         if ($bartype) {
@@ -232,7 +246,8 @@ class Navigation {
      * @param  array  $nav
      * @return array
      */
-    protected function active(array $nav) {
+    protected function active(array $nav)
+    {
         // check if each item is active
         foreach ($nav as $key => $value) {
             // check if it is local
@@ -261,7 +276,8 @@ class Navigation {
      * @param  array  $nav
      * @return array
      */
-    protected function process(array $nav) {
+    protected function process(array $nav)
+    {
         // convert slugs to urls
         foreach ($nav as $key => $value) {
             // if the url is not set

@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Navigation\Facades;
+namespace GrahamCampbell\Tests\Navigation\Facades;
 
-use Illuminate\Support\Facades\Facade;
+use GrahamCampbell\Tests\Navigation\AbstractTestCase;
+use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
 
 /**
- * This is the navigation facade class.
+ * This is the abstract facade test case class.
  *
  * @package    Laravel-Navigation
  * @author     Graham Campbell
@@ -27,15 +28,7 @@ use Illuminate\Support\Facades\Facade;
  * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
-class Navigation extends Facade
+abstract class AbstractFacadeTestCase extends AbstractTestCase
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
-    protected static function getFacadeAccessor()
-    {
-        return 'navigation';
-    }
+    use FacadeTestCaseTrait;
 }
