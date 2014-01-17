@@ -6,8 +6,8 @@ Laravel Navigation
 [![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Navigation.png)](https://travis-ci.org/GrahamCampbell/Laravel-Navigation)
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Navigation/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation/badges/quality-score.png?s=00adc2bf1ad673660b1955e237fbf8ce7979dca2)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/abdd3547-d882-4b7d-8ed4-3e01bb1967c5/mini.png)](https://insight.sensiolabs.com/projects/abdd3547-d882-4b7d-8ed4-3e01bb1967c5)
 [![Latest Version](https://poser.pugx.org/graham-campbell/navigation/v/stable.png)](https://packagist.org/packages/graham-campbell/navigation)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation)
 
 
 ## What Is Laravel Navigation?
@@ -19,7 +19,7 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 * Laravel Navigation uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Navigation) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
 * Laravel Navigation uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
 * Laravel Navigation uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* Laravel Navigation provides a [change log](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Navigation/wiki).  
+* Laravel Navigation provides a [change log](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), and [api docs](http://grahamcampbell.github.io/Laravel-Navigation).  
 * Laravel Navigation is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md).  
 
 
@@ -84,7 +84,7 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 Please review these guidelines before submitting any pull requests.  
 
-* Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
+* When submitting bug fixes, check if a maintenance branch exists for an older series, then pull against that older branch if the bug is present in it.  
 * Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
 * Please follow the [PSR-2 Coding Style](https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-2-coding-style-guide.md) and [PHP-FIG Naming Conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md).  
 
