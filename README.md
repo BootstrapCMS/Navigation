@@ -16,8 +16,8 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 * Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Navigation relies on my [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) package.  
-* Laravel Navigation uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Navigation) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
-* Laravel Navigation uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation) to run additional tests and checks.  
+* Laravel Navigation uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Navigation) with [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation) to check everything is working.  
+* Laravel Navigation uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation) and [SensioLabsInsight](https://insight.sensiolabs.com/projects/abdd3547-d882-4b7d-8ed4-3e01bb1967c5) to run additional checks.  
 * Laravel Navigation uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * Laravel Navigation provides a [change log](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), and [api docs](http://grahamcampbell.github.io/Laravel-Navigation).  
 * Laravel Navigation is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md).  
