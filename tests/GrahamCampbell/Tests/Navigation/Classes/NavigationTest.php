@@ -31,7 +31,7 @@ use GrahamCampbell\TestBench\Classes\AbstractTestCase;
  */
 class NavigationTest extends AbstractTestCase
 {
-    public function testGetMainDefault()
+    public function testMainDefault()
     {
         $navigation = $this->getNavigation();
 
@@ -53,7 +53,85 @@ class NavigationTest extends AbstractTestCase
         $expected = array(
             array('title' => 'Next', 'url' => 'http://laravel.com/next', 'active' => true),
             array('title' => 'Test', 'url' => 'http://laravel.com/test', 'active' => false),
-            array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false),
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
+        );
+
+        $this->assertEquals($expected, $return);
+    }
+
+    public function testMainOther()
+    {
+        $navigation = $this->getNavigation();
+
+        $navigation->addMain(array('title' => 'Test', 'slug' => 'test'), 'other', false);
+        $navigation->addMain(array('title' => 'Next', 'slug' => 'next'), 'other', true);
+        $navigation->addMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'));
+
+        $navigation->getEvents()->shouldReceive('fire')->once()
+            ->with('navigation.main', array(array('type' => 'other')));
+
+        $navigation->getRequest()->shouldReceive('is')->times(3)
+            ->andReturn(true, false);
+
+        $navigation->getUrl()->shouldReceive('to')->twice()
+            ->andReturn('http://laravel.com/next', 'http://laravel.com/test');
+
+        $return = $navigation->getMain();
+
+        $expected = array(
+            array('title' => 'Next', 'url' => 'http://laravel.com/next', 'active' => true),
+            array('title' => 'Test', 'url' => 'http://laravel.com/test', 'active' => false),
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
+        );
+
+        $this->assertEquals($expected, $return);
+    }
+
+    public function testBarDefault()
+    {
+        $navigation = $this->getNavigation();
+
+        $navigation->addBar(array('title' => 'Test', 'slug' => 'test'), 'default', false);
+        $navigation->addBar(array('title' => 'Next', 'slug' => 'next'), 'default', true);
+        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'));
+
+        $navigation->getEvents()->shouldReceive('fire')->once()
+            ->with('navigation.bar', array(array('type' => 'default')));
+
+        $navigation->getRequest()->shouldReceive('is')->times(3)
+            ->andReturn(true, false);
+
+        $return = $navigation->getBar();
+
+        $expected = array(
+            array('title' => 'Next', 'url' => 'http://laravel.com/next'),
+            array('title' => 'Test', 'url' => 'http://laravel.com/test'),
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url')
+        );
+
+        $this->assertEquals($expected, $return);
+    }
+
+    public function testBarOther()
+    {
+        $navigation = $this->getNavigation();
+
+        $navigation->addBar(array('title' => 'Test', 'slug' => 'test'), 'other', false);
+        $navigation->addBar(array('title' => 'Next', 'slug' => 'next'), 'other', true);
+        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'));
+
+        $navigation->getEvents()->shouldReceive('fire')->once()
+            ->with('navigation.bar', array(array('type' => 'other')));
+
+        $navigation->getUrl()->shouldReceive('to')->twice()
+            ->andReturn('http://laravel.com/next', 'http://laravel.com/test');
+
+        $return = $navigation->getBar();
+
+        $expected = array(
+            array('title' => 'Next', 'url' => 'http://laravel.com/next'),
+            array('title' => 'Test', 'url' => 'http://laravel.com/test'),
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url')
         );
 
         $this->assertEquals($expected, $return);
