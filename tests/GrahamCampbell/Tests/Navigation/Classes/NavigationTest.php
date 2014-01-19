@@ -165,14 +165,98 @@ class NavigationTest extends AbstractTestCase
         $this->assertEquals($expected, $return);
     }
 
+    public function testGetHTMLNoBar()
+    {
+        $navigation = $this->getMockedNavigation();
+
+        $navigation->shouldReceive('getMain')->once()->with('default')
+            ->andReturn(array(array('title' => 'Test', 'url' => 'http://laravel.com/test')));
+
+        $data = array(
+            'title' => 'Navigation',
+            'side' => 'dropdown',
+            'inverse' => true,
+            'main' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test')),
+            'bar' => false
+        );
+
+        $navigation->getHTMLMin()->shouldReceive('make')->once()
+            ->with('view', $data)->andReturn('html goes here');
+
+        $return = $navigation->getHTML('default', false);
+
+        $this->assertEquals($return, 'html goes here');
+    }
+
+    public function testGetHTMLEmptyBar()
+    {
+        $navigation = $this->getMockedNavigation();
+
+        $navigation->shouldReceive('getMain')->once()->with('default')
+            ->andReturn(array(array('title' => 'Test', 'url' => 'http://laravel.com/test')));
+
+        $navigation->shouldReceive('getBar')->once()->with('default')->andReturn(array());
+
+        $data = array(
+            'title' => 'Navigation',
+            'side' => 'dropdown',
+            'inverse' => true,
+            'main' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test')),
+            'bar' => array()
+        );
+
+        $navigation->getHTMLMin()->shouldReceive('make')->once()
+            ->with('view', $data)->andReturn('html goes here');
+
+        $return = $navigation->getHTML('default', 'default');
+
+        $this->assertEquals($return, 'html goes here');
+    }
+
+    public function testGetHTMLWithBar()
+    {
+        $navigation = $this->getMockedNavigation();
+
+        $navigation->shouldReceive('getMain')->once()->with('default')
+            ->andReturn(array(array('title' => 'Test', 'url' => 'http://laravel.com/test')));
+
+        $navigation->shouldReceive('getBar')->once()->with('default')
+            ->andReturn(array(array('title' => 'Test', 'url' => 'http://laravel.com/test')));
+
+        $data = array(
+            'title' => 'Navigation',
+            'side' => 'dropdown',
+            'inverse' => true,
+            'main' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test')),
+            'bar' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test'))
+        );
+
+        $navigation->getHTMLMin()->shouldReceive('make')->once()
+            ->with('view', $data)->andReturn('html goes here');
+
+        $return = $navigation->getHTML('default', 'default');
+
+        $this->assertEquals($return, 'html goes here');
+    }
+
     protected function getNavigation()
     {
         $events = Mockery::mock('Illuminate\Events\Dispatcher');
         $request = Mockery::mock('Illuminate\Http\Request');
         $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
-        $config = Mockery::mock('Illuminate\Config\Repository');
         $htmlmin = Mockery::mock('GrahamCampbell\HTMLMin\Classes\HTMLMin');
 
-        return new Navigation($events, $request, $url, $config, $htmlmin);
+        return new Navigation($events, $request, $url, $htmlmin, 'view');
+    }
+
+    protected function getMockedNavigation()
+    {
+        $events = Mockery::mock('Illuminate\Events\Dispatcher');
+        $request = Mockery::mock('Illuminate\Http\Request');
+        $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
+        $htmlmin = Mockery::mock('GrahamCampbell\HTMLMin\Classes\HTMLMin');
+
+        return Mockery::mock('GrahamCampbell\Navigation\Classes\Navigation[getMain,getBar]',
+            array($events, $request, $url, $htmlmin, 'view'));
     }
 }
