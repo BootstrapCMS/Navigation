@@ -37,7 +37,7 @@ class NavigationTest extends AbstractTestCase
 
         $navigation->addMain(array('title' => 'Test', 'slug' => 'test'), 'default', false);
         $navigation->addMain(array('title' => 'Next', 'slug' => 'next'), 'default', true);
-        $navigation->addMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'));
+        $navigation->addMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'default');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
             ->with('navigation.main', array(array('type' => 'default')));
@@ -65,7 +65,7 @@ class NavigationTest extends AbstractTestCase
 
         $navigation->addMain(array('title' => 'Test', 'slug' => 'test'), 'other', false);
         $navigation->addMain(array('title' => 'Next', 'slug' => 'next'), 'other', true);
-        $navigation->addMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'));
+        $navigation->addMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'other');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
             ->with('navigation.main', array(array('type' => 'other')));
@@ -84,7 +84,21 @@ class NavigationTest extends AbstractTestCase
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
         );
 
-        // $this->assertEquals($expected, $return);
+        $this->assertEquals($expected, $return);
+    }
+
+    public function testMainEmpty()
+    {
+        $navigation = $this->getNavigation();
+
+        $navigation->getEvents()->shouldReceive('fire')->once()
+            ->with('navigation.main', array(array('type' => 'empty')));
+
+        $return = $navigation->getMain('empty');
+
+        $expected = array();
+
+        $this->assertEquals($expected, $return);
     }
 
     public function testBarDefault()
@@ -93,7 +107,7 @@ class NavigationTest extends AbstractTestCase
 
         $navigation->addBar(array('title' => 'Test', 'slug' => 'test'), 'default', false);
         $navigation->addBar(array('title' => 'Next', 'slug' => 'next'), 'default', true);
-        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'));
+        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'default');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
             ->with('navigation.bar', array(array('type' => 'default')));
@@ -118,7 +132,7 @@ class NavigationTest extends AbstractTestCase
 
         $navigation->addBar(array('title' => 'Test', 'slug' => 'test'), 'other', false);
         $navigation->addBar(array('title' => 'Next', 'slug' => 'next'), 'other', true);
-        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'));
+        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'other');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
             ->with('navigation.bar', array(array('type' => 'other')));
@@ -134,7 +148,21 @@ class NavigationTest extends AbstractTestCase
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url')
         );
 
-        // $this->assertEquals($expected, $return);
+        $this->assertEquals($expected, $return);
+    }
+
+    public function testBarEmpty()
+    {
+        $navigation = $this->getNavigation();
+
+        $navigation->getEvents()->shouldReceive('fire')->once()
+            ->with('navigation.bar', array(array('type' => 'empty')));
+
+        $return = $navigation->getBar('empty');
+
+        $expected = array();
+
+        $this->assertEquals($expected, $return);
     }
 
     protected function getNavigation()
