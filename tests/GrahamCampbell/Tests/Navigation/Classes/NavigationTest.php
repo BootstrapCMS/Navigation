@@ -165,6 +165,24 @@ class NavigationTest extends AbstractTestCase
         $this->assertEquals($expected, $return);
     }
 
+    public function testAddMain()
+    {
+        $navigation = $this->getNavigation();
+
+        $return = $navigation->addMain(array('title' => 'Test', 'slug' => 'test'));
+
+        $this->assertEquals($navigation, $return);
+    }
+
+    public function testAddBar()
+    {
+        $navigation = $this->getNavigation();
+
+        $return = $navigation->addBar(array('title' => 'Test', 'slug' => 'test'));
+
+        $this->assertEquals($navigation, $return);
+    }
+
     public function testGetHTMLNoBar()
     {
         $navigation = $this->getMockedNavigation();
