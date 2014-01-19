@@ -69,13 +69,6 @@ class Navigation
     protected $url;
 
     /**
-     * The config instance.
-     *
-     * @var \Illuminate\Config\Repository
-     */
-    protected $config;
-
-    /**
      * The htmlmin instance.
      *
      * @var \GrahamCampbell\HTMLMin\Classes\HTMLMin
@@ -83,22 +76,29 @@ class Navigation
     protected $htmlmin;
 
     /**
+     * The view name.
+     *
+     * @var string
+     */
+    protected $view;
+
+    /**
      * Create a new instance.
      *
      * @param  \Illuminate\Events\Dispatcher  $events
      * @param  \Illuminate\Http\Request  $request
      * @param  \Illuminate\Routing\UrlGenerator  $url
-     * @param  \Illuminate\Config\Repository  $config
      * @param  \GrahamCampbell\HTMLMin\Classes\HTMLMin  $htmlmin
+     * @param  string  $view
      * @return void
      */
-    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, Repository $config, HTMLMin $htmlmin)
+    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, HTMLMin $htmlmin, $view)
     {
         $this->events = $events;
         $this->request = $request;
         $this->url = $url;
-        $this->config = $config;
         $this->htmlmin = $htmlmin;
+        $this->view = $viewe;
     }
 
     /**
@@ -237,7 +237,7 @@ class Navigation
         }
 
         // return the html nav bar
-        return $this->htmlmin->make($this->config['navigation::view'], array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
+        return $this->htmlmin->make($this->view, array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
     }
 
     /**
@@ -321,16 +321,6 @@ class Navigation
     public function getUrl()
     {
         return $this->url;
-    }
-
-    /**
-     * Get the config instance.
-     *
-     * @return \Illuminate\Config\Repository
-     */
-    public function getConfig()
-    {
-        return $this->config;
     }
 
     /**

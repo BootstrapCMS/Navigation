@@ -67,10 +67,10 @@ class NavigationServiceProvider extends ServiceProvider
             $events = $app['events'];
             $request = $app['request'];
             $url = $app['url'];
-            $config = $app['config'];
             $htmlmin = $app['htmlmin'];
+            $view = $app['config']['navigation::view'];
 
-            return new Classes\Navigation($events, $request, $url, $config, $htmlmin);
+            return new Classes\Navigation($events, $request, $url, $htmlmin, $view);
         });
     }
 
