@@ -20,7 +20,7 @@ use GrahamCampbell\Tests\Navigation\AbstractTestCase;
 use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
 
 /**
- * This is the navigation facade test case class.
+ * This is the navigation facade test class.
  *
  * @package    Laravel-Navigation
  * @author     Graham Campbell
