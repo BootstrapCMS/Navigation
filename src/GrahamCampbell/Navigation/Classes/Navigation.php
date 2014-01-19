@@ -98,7 +98,7 @@ class Navigation
         $this->request = $request;
         $this->url = $url;
         $this->htmlmin = $htmlmin;
-        $this->view = $viewe;
+        $this->view = $view;
     }
 
     /**
