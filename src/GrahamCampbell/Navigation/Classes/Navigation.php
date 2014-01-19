@@ -292,4 +292,54 @@ class Navigation
         // spit out the nav bar array at the end
         return $nav;
     }
+
+    /**
+     * Get the events instance.
+     *
+     * @return \Illuminate\Events\Dispatcher
+     */
+    public function getEvents()
+    {
+        return $this->events;
+    }
+
+    /**
+     * Get the request instance.
+     *
+     * @return \Illuminate\Http\Request
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * Get the url instance.
+     *
+     * @return \Illuminate\Routing\UrlGenerator
+     */
+    public function getUrl()
+    {
+        return $this->url;
+    }
+
+    /**
+     * Get the config instance.
+     *
+     * @return \Illuminate\Config\Repository
+     */
+    public function getConfig()
+    {
+        return $this->config;
+    }
+
+    /**
+     * Get the htmlmin instance.
+     *
+     * @return \GrahamCampbell\HTMLMin\Classes\HTMLMin
+     */
+    public function getHTMLMin()
+    {
+        return $this->htmlmin;
+    }
 }
