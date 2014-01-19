@@ -16,6 +16,9 @@
 
 namespace GrahamCampbell\Tests\Navigation\Facades;
 
+use GrahamCampbell\Tests\Navigation\AbstractTestCase;
+use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+
 /**
  * This is the navigation facade test case class.
  *
@@ -25,8 +28,10 @@ namespace GrahamCampbell\Tests\Navigation\Facades;
  * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
-class NavigationTest extends AbstractFacadeTestCase
+class NavigationTest extends AbstractTestCase
 {
+    use FacadeTestCaseTrait;
+
     /**
      * Get the facade accessor.
      *
