@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V0.2 Alpha (Upcoming)
+## V0.2 Alpha (21/01/2014)
 
 * Dropped Laravel 4.0 support
 * Travis and Scrutinizer tweaks
