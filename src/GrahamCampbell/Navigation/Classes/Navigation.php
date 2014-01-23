@@ -19,7 +19,6 @@ namespace GrahamCampbell\Navigation\Classes;
 use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Routing\UrlGenerator;
-use Illuminate\Config\Repository;
 use GrahamCampbell\HTMLMin\Classes\HTMLMin;
 
 /**
