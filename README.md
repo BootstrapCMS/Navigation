@@ -43,15 +43,15 @@ You'll then need to run `composer install` or `composer update` to download it a
 
 You will need to register the [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) service provider before you attempt to load the Laravel Navigation service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
-`'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`
+* `'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`
 
 Once Laravel Navigation is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
-`'GrahamCampbell\Navigation\NavigationServiceProvider'`
+* `'GrahamCampbell\Navigation\NavigationServiceProvider'`
 
 You can register the Navigation facade in the `aliases` key of your `app/config/app.php` file if you like.
 
-`'Navigation' => 'GrahamCampbell\Navigation\Facades\Navigation'`
+* `'Navigation' => 'GrahamCampbell\Navigation\Facades\Navigation'`
 
 
 ## Configuration
