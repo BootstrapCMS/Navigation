@@ -21,7 +21,7 @@ return array(
     | Navigation View
     |--------------------------------------------------------------------------
     |
-    | This option specifies the view to use.
+    | This option defines the view to use for the navigation bar.
     |
     | Default: 'navigation::bootstrap'
     |
