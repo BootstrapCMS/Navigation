@@ -66,7 +66,7 @@ There is one config option:
 
 **Navigation View**
 
-This option (`'view'`) defines the view to use for the navigation bar. The default value for this setting is `'navigation::bootstrap'`.
+This option (`'view'`) defines the view to use for the navigation bar. The default value for this setting is `'graham-campbell/navigation::bootstrap'`.
 
 
 ## Usage

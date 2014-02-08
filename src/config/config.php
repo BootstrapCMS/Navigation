@@ -23,10 +23,10 @@ return array(
     |
     | This option defines the view to use for the navigation bar.
     |
-    | Default: 'navigation::bootstrap'
+    | Default: 'graham-campbell/navigation::bootstrap'
     |
     */
 
-    'view' => 'navigation::bootstrap'
+    'view' => 'graham-campbell/navigation::bootstrap'
 
 );

@@ -43,7 +43,7 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('graham-campbell/navigation');
+        $this->package('graham-campbell/navigation', 'graham-campbell/navigation', __DIR__);
     }
 
     /**
@@ -68,7 +68,7 @@ class NavigationServiceProvider extends ServiceProvider
             $request = $app['request'];
             $url = $app['url'];
             $htmlmin = $app['htmlmin'];
-            $view = $app['config']['navigation::view'];
+            $view = $app['config']['graham-campbell/navigation::view'];
 
             return new Classes\Navigation($events, $request, $url, $htmlmin, $view);
         });
