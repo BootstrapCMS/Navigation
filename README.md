@@ -35,11 +35,7 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 Please check the system requirements before installing Laravel Navigation.
 
-To get the latest version of Laravel Navigation, simply require it in your `composer.json` file.
-
-`"graham-campbell/navigation": "*"`
-
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Navigation, simply require `"graham-campbell/navigation": "0.2.*@alpha"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 You will need to register the [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) service provider before you attempt to load the Laravel Navigation service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
