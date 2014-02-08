@@ -1,6 +1,12 @@
 CHANGE LOG
 ==========
 
+## V0.2.1 Alpha (Upcoming)
+
+* PSR-4 autoloading
+* Updated docs
+* Minor fixes
+
 
 ## V0.2 Alpha (21/01/2014)
 
