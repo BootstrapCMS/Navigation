@@ -274,7 +274,6 @@ class NavigationTest extends AbstractTestCase
         $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
         $htmlmin = Mockery::mock('GrahamCampbell\HTMLMin\Classes\HTMLMin');
 
-        return Mockery::mock('GrahamCampbell\Navigation\Classes\Navigation[getMain,getBar]',
-            array($events, $request, $url, $htmlmin, 'view'));
+        return Mockery::mock('GrahamCampbell\Navigation\Classes\Navigation[getMain,getBar]', array($events, $request, $url, $htmlmin, 'view'));
     }
 }
