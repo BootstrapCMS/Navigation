@@ -26,7 +26,7 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 ## System Requirements
 
-* PHP 5.4.7+ or PHP 5.5+ is required.
+* PHP 5.4.7+ or HHVM 2.4+ is required.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Navigation.
 
@@ -35,7 +35,7 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 Please check the system requirements before installing Laravel Navigation.
 
-To get the latest version of Laravel Navigation, simply require `"graham-campbell/navigation": "0.2.*@alpha"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Navigation, simply require `"graham-campbell/navigation": "0.3.*@dev"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 You will need to register the [Laravel HTMLMin](https://github.com/GrahamCampbell/Laravel-HTMLMin) service provider before you attempt to load the Laravel Navigation service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
@@ -70,7 +70,7 @@ This option (`'view'`) defines the view to use for the navigation bar. The defau
 There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Navigation
 ) for Laravel Navigation.
 
-You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).
+You may see an example of implementation in [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS).
 
 
 ## Updating Your Fork
