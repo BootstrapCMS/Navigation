@@ -2,13 +2,13 @@ Laravel Navigation
 ==================
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/Laravel-Navigation/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Navigation.png)](https://travis-ci.org/GrahamCampbell/Laravel-Navigation)
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Navigation/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation/badges/quality-score.png?s=00adc2bf1ad673660b1955e237fbf8ce7979dca2)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/abdd3547-d882-4b7d-8ed4-3e01bb1967c5/mini.png)](https://insight.sensiolabs.com/projects/abdd3547-d882-4b7d-8ed4-3e01bb1967c5)
 [![Software License](https://poser.pugx.org/graham-campbell/navigation/license.png)](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md)
 [![Latest Version](https://poser.pugx.org/graham-campbell/navigation/v/stable.png)](https://packagist.org/packages/graham-campbell/navigation)
+[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation)
 
 
 ## What Is Laravel Navigation?
