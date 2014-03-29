@@ -2,13 +2,12 @@ Laravel Navigation
 ==================
 
 
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Navigation.png)](https://travis-ci.org/GrahamCampbell/Laravel-Navigation)
-[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Navigation/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation)
+[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Navigation/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Navigation)
+[![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Navigation/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Navigation)
+[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md)
+[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Navigation.svg)](https://github.com/GrahamCampbell/Laravel-Navigation/releases)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation/badges/quality-score.png?s=00adc2bf1ad673660b1955e237fbf8ce7979dca2)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/abdd3547-d882-4b7d-8ed4-3e01bb1967c5/mini.png)](https://insight.sensiolabs.com/projects/abdd3547-d882-4b7d-8ed4-3e01bb1967c5)
-[![Software License](https://poser.pugx.org/graham-campbell/navigation/license.png)](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md)
-[![Latest Version](https://poser.pugx.org/graham-campbell/navigation/v/stable.png)](https://packagist.org/packages/graham-campbell/navigation)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Navigation)
 
 
 ## What Is Laravel Navigation?
@@ -26,7 +25,7 @@ Laravel Navigation is a navigation bar generator for [Laravel 4.1](http://larave
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 2.4+ is required.
+* PHP 5.4.7+ or HHVM 3.0+ is required.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Navigation.
 
