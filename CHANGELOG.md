@@ -5,6 +5,7 @@ CHANGE LOG
 ## V0.3 Alpha (Upcoming)
 
 * PHP 5.6 and HHVM compatibility
+* Composer tweaks
 
 
 ## V0.2.1 Alpha (08/02/2014)
