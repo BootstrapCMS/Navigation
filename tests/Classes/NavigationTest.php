@@ -260,7 +260,7 @@ class NavigationTest extends AbstractTestCase
 
     public function testSetRequest()
     {
-        $navigation = $this->getNavigation()();
+        $navigation = $this->getNavigation();
 
         $request = new Request();
 
