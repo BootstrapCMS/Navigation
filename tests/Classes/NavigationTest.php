@@ -17,6 +17,7 @@
 namespace GrahamCampbell\Tests\Navigation\Classes;
 
 use Mockery;
+use Illuminate\Http\Request;
 use GrahamCampbell\Navigation\Classes\Navigation;
 use GrahamCampbell\TestBench\Classes\AbstractTestCase;
 
@@ -255,6 +256,19 @@ class NavigationTest extends AbstractTestCase
         $return = $navigation->getHTML('default', 'default');
 
         $this->assertEquals($return, 'html goes here');
+    }
+
+    public function testSetRequest()
+    {
+        $navigation = $this->getNavigation()();
+
+        $request = new Request();
+
+        $navigation->setRequest($request);
+
+        $return = $navigation->getRequest();
+
+        $this->assertEquals($request, $return);
     }
 
     protected function getNavigation()

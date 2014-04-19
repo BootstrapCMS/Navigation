@@ -313,6 +313,17 @@ class Navigation
     }
 
     /**
+     * Set the request instance.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    public function setRequest(Request $request)
+    {
+        return $this->request = $request;
+    }
+
+    /**
      * Get the url instance.
      *
      * @return \Illuminate\Routing\UrlGenerator

@@ -70,7 +70,9 @@ class NavigationServiceProvider extends ServiceProvider
             $htmlmin = $app['htmlmin'];
             $view = $app['config']['graham-campbell/navigation::view'];
 
-            return new Classes\Navigation($events, $request, $url, $htmlmin, $view);
+            $navigation = new Classes\Navigation($events, $request, $url, $htmlmin, $view);
+            $app->refresh('request', $navigation, 'setRequest');
+            return $navigation;
         });
     }
 

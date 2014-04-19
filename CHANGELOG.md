@@ -10,6 +10,7 @@ CHANGE LOG
 ## V0.3 Alpha (Upcoming)
 
 * PHP 5.6 and HHVM compatibility
+* Fixed request binding
 * Composer tweaks
 
 
