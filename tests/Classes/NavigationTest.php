@@ -199,7 +199,7 @@ class NavigationTest extends AbstractTestCase
             'bar' => false
         );
 
-        $navigation->getHTMLMin()->shouldReceive('make')->once()
+        $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
         $return = $navigation->getHTML('default', false);
@@ -224,7 +224,7 @@ class NavigationTest extends AbstractTestCase
             'bar' => array()
         );
 
-        $navigation->getHTMLMin()->shouldReceive('make')->once()
+        $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
         $return = $navigation->getHTML('default', 'default');
@@ -250,7 +250,7 @@ class NavigationTest extends AbstractTestCase
             'bar' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test'))
         );
 
-        $navigation->getHTMLMin()->shouldReceive('make')->once()
+        $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
         $return = $navigation->getHTML('default', 'default');
@@ -276,9 +276,9 @@ class NavigationTest extends AbstractTestCase
         $events = Mockery::mock('Illuminate\Events\Dispatcher');
         $request = Mockery::mock('Illuminate\Http\Request');
         $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
-        $htmlmin = Mockery::mock('GrahamCampbell\HTMLMin\Classes\HTMLMin');
+        $view = Mockery::mock('Illuminate\View\Factory');
 
-        return new Navigation($events, $request, $url, $htmlmin, 'view');
+        return new Navigation($events, $request, $url, $view, 'view');
     }
 
     protected function getMockedNavigation()
@@ -286,9 +286,9 @@ class NavigationTest extends AbstractTestCase
         $events = Mockery::mock('Illuminate\Events\Dispatcher');
         $request = Mockery::mock('Illuminate\Http\Request');
         $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
-        $htmlmin = Mockery::mock('GrahamCampbell\HTMLMin\Classes\HTMLMin');
+        $view = Mockery::mock('Illuminate\View\Factory');
 
-        $params = array($events, $request, $url, $htmlmin, 'view');
+        $params = array($events, $request, $url, $view, 'view');
 
         return Mockery::mock('GrahamCampbell\Navigation\Classes\Navigation[getMain,getBar]', $params);
     }

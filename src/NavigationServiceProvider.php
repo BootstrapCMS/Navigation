@@ -67,10 +67,10 @@ class NavigationServiceProvider extends ServiceProvider
             $events = $app['events'];
             $request = $app['request'];
             $url = $app['url'];
-            $htmlmin = $app['htmlmin'];
-            $view = $app['config']['graham-campbell/navigation::view'];
+            $view = $app['view'];
+            $name = $app['config']['graham-campbell/navigation::view'];
 
-            $navigation = new Classes\Navigation($events, $request, $url, $htmlmin, $view);
+            $navigation = new Classes\Navigation($events, $request, $url, $view, $name);
             $app->refresh('request', $navigation, 'setRequest');
             return $navigation;
         });
