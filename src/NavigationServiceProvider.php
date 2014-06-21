@@ -74,6 +74,8 @@ class NavigationServiceProvider extends ServiceProvider
             $app->refresh('request', $navigation, 'setRequest');
             return $navigation;
         });
+
+        $this->app->alias('navigation', 'GrahamCampbell\Navigation\Navigation');
     }
 
     /**
