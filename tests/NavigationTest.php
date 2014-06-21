@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Navigation\Classes;
+namespace GrahamCampbell\Tests\Navigation;
 
 use Mockery;
 use Illuminate\Http\Request;
-use GrahamCampbell\Navigation\Classes\Navigation;
-use GrahamCampbell\TestBench\Classes\AbstractTestCase;
+use GrahamCampbell\Navigation\Navigation;
+use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 
 /**
  * This is the navigation class test class.
@@ -30,7 +30,7 @@ use GrahamCampbell\TestBench\Classes\AbstractTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
-class NavigationTest extends AbstractTestCase
+class NavigationTest extends AbstractTestBenchTestCase
 {
     public function testMainDefault()
     {
@@ -290,6 +290,6 @@ class NavigationTest extends AbstractTestCase
 
         $params = array($events, $request, $url, $view, 'view');
 
-        return Mockery::mock('GrahamCampbell\Navigation\Classes\Navigation[getMain,getBar]', $params);
+        return Mockery::mock('GrahamCampbell\Navigation\Navigation[getMain,getBar]', $params);
     }
 }

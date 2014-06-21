@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Navigation\Classes;
+namespace GrahamCampbell\Navigation;
 
 use Illuminate\Http\Request;
 use Illuminate\View\Factory;
