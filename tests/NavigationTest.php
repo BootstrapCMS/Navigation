@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Navigation\Classes;
+namespace GrahamCampbell\Tests\Navigation;
 
 use Mockery;
 use Illuminate\Http\Request;
-use GrahamCampbell\Navigation\Classes\Navigation;
-use GrahamCampbell\TestBench\Classes\AbstractTestCase;
+use GrahamCampbell\Navigation\Navigation;
+use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 
 /**
  * This is the navigation class test class.
@@ -30,7 +30,7 @@ use GrahamCampbell\TestBench\Classes\AbstractTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Navigation
  */
-class NavigationTest extends AbstractTestCase
+class NavigationTest extends AbstractTestBenchTestCase
 {
     public function testMainDefault()
     {
@@ -199,7 +199,7 @@ class NavigationTest extends AbstractTestCase
             'bar' => false
         );
 
-        $navigation->getHTMLMin()->shouldReceive('make')->once()
+        $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
         $return = $navigation->getHTML('default', false);
@@ -224,7 +224,7 @@ class NavigationTest extends AbstractTestCase
             'bar' => array()
         );
 
-        $navigation->getHTMLMin()->shouldReceive('make')->once()
+        $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
         $return = $navigation->getHTML('default', 'default');
@@ -250,7 +250,7 @@ class NavigationTest extends AbstractTestCase
             'bar' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test'))
         );
 
-        $navigation->getHTMLMin()->shouldReceive('make')->once()
+        $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
         $return = $navigation->getHTML('default', 'default');
@@ -276,9 +276,9 @@ class NavigationTest extends AbstractTestCase
         $events = Mockery::mock('Illuminate\Events\Dispatcher');
         $request = Mockery::mock('Illuminate\Http\Request');
         $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
-        $htmlmin = Mockery::mock('GrahamCampbell\HTMLMin\Classes\HTMLMin');
+        $view = Mockery::mock('Illuminate\View\Factory');
 
-        return new Navigation($events, $request, $url, $htmlmin, 'view');
+        return new Navigation($events, $request, $url, $view, 'view');
     }
 
     protected function getMockedNavigation()
@@ -286,10 +286,10 @@ class NavigationTest extends AbstractTestCase
         $events = Mockery::mock('Illuminate\Events\Dispatcher');
         $request = Mockery::mock('Illuminate\Http\Request');
         $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
-        $htmlmin = Mockery::mock('GrahamCampbell\HTMLMin\Classes\HTMLMin');
+        $view = Mockery::mock('Illuminate\View\Factory');
 
-        $params = array($events, $request, $url, $htmlmin, 'view');
+        $params = array($events, $request, $url, $view, 'view');
 
-        return Mockery::mock('GrahamCampbell\Navigation\Classes\Navigation[getMain,getBar]', $params);
+        return Mockery::mock('GrahamCampbell\Navigation\Navigation[getMain,getBar]', $params);
     }
 }

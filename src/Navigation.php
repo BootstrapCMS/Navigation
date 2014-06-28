@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Navigation\Classes;
+namespace GrahamCampbell\Navigation;
 
-use Illuminate\Events\Dispatcher;
 use Illuminate\Http\Request;
+use Illuminate\View\Factory;
+use Illuminate\Events\Dispatcher;
 use Illuminate\Routing\UrlGenerator;
-use GrahamCampbell\HTMLMin\Classes\HTMLMin;
 
 /**
  * This is the navigation class.
@@ -68,18 +68,18 @@ class Navigation
     protected $url;
 
     /**
-     * The htmlmin instance.
+     * The view instance.
      *
-     * @var \GrahamCampbell\HTMLMin\Classes\HTMLMin
+     * @var \Illuminate\View\Factory
      */
-    protected $htmlmin;
+    protected $view;
 
     /**
      * The view name.
      *
      * @var string
      */
-    protected $view;
+    protected $name;
 
     /**
      * Create a new instance.
@@ -87,17 +87,17 @@ class Navigation
      * @param  \Illuminate\Events\Dispatcher  $events
      * @param  \Illuminate\Http\Request  $request
      * @param  \Illuminate\Routing\UrlGenerator  $url
-     * @param  \GrahamCampbell\HTMLMin\Classes\HTMLMin  $htmlmin
-     * @param  string  $view
+     * @param  \Illuminate\View\Factory  $view
+     * @param  string  $name
      * @return void
      */
-    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, HTMLMin $htmlmin, $view)
+    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, Factory $view, $name)
     {
         $this->events = $events;
         $this->request = $request;
         $this->url = $url;
-        $this->htmlmin = $htmlmin;
         $this->view = $view;
+        $this->name = $name;
     }
 
     /**
@@ -236,7 +236,7 @@ class Navigation
         }
 
         // return the html nav bar
-        return $this->htmlmin->make($this->view, array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
+        return $this->view->make($this->name, array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
     }
 
     /**
@@ -334,12 +334,12 @@ class Navigation
     }
 
     /**
-     * Get the htmlmin instance.
+     * Get the view instance.
      *
-     * @return \GrahamCampbell\HTMLMin\Classes\HTMLMin
+     * @return \Illuminate\View\Factory
      */
-    public function getHTMLMin()
+    public function getView()
     {
-        return $this->htmlmin;
+        return $this->view;
     }
 }

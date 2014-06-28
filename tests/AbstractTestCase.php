@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Tests\Navigation;
 
-use GrahamCampbell\TestBench\Classes\AbstractLaravelTestCase as TestCase;
+use GrahamCampbell\TestBench\AbstractLaravelTestCase as TestCase;
 
 /**
  * This is the abstract test case class.
@@ -37,18 +37,6 @@ abstract class AbstractTestCase extends TestCase
     protected function getBasePath()
     {
         return __DIR__.'/../src';
-    }
-
-    /**
-     * Get the required service providers.
-     *
-     * @return array
-     */
-    protected function getRequiredServiceProviders()
-    {
-        return array(
-            'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'
-        );
     }
 
     /**

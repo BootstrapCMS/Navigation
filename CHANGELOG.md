@@ -2,9 +2,12 @@ CHANGE LOG
 ==========
 
 
-## V1.0 Beta 1 (Upcoming - July 2014)
+## V0.4 Alpha (Upcoming - July 2014)
 
-* Upgrade to Laravel 4.2
+* Upgrade to Laravel 4.2+
+* Removed htmlmin dependency
+* Minor refactoring
+* Added di aliases
 
 
 ## V0.3 Alpha (21/04/2014)

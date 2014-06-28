@@ -59,6 +59,6 @@ class NavigationTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\Navigation\Classes\Navigation';
+        return 'GrahamCampbell\Navigation\Navigation';
     }
 }
