@@ -46,8 +46,7 @@ This option (`'view'`) defines the view to use for the navigation bar. The defau
 
 ## Usage
 
-There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Navigation
-) for Laravel Navigation.
+There is currently no usage documentation besides the [API Documentation](http://docs.grahamjcampbell.co.uk) for Laravel Navigation.
 
 You may see an example of implementation in [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS).
 
