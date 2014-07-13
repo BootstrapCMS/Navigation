@@ -31,17 +31,7 @@ You can register the Navigation facade in the `aliases` key of your `app/config/
 
 ## Configuration
 
-Laravel Navigation supports optional configuration.
-
-To get started, first publish the package config file:
-
-    php artisan config:publish graham-campbell/navigation
-
-There is one config option:
-
-**Navigation View**
-
-This option (`'view'`) defines the view to use for the navigation bar. The default value for this setting is `'graham-campbell/navigation::bootstrap'`.
+Laravel Navigation requires no configuration. Just follow the simple install instructions and go!
 
 
 ## Usage
