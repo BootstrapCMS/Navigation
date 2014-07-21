@@ -101,86 +101,28 @@ class Navigation
     }
 
     /**
-     * Get the main navigation array.
-     *
-     * @param  string  $type
-     * @return array
-     */
-    public function getMain($type = 'default')
-    {
-        // fire event that can be hooked to add items to the nav bar
-        $this->events->fire('navigation.main', array(array('type' => $type)));
-
-        // check if the type exists in the main array
-        if ($type !== 'default' && !array_key_exists($type, $this->main)) {
-            // use the default type
-            $type = 'default';
-        }
-
-        if (!array_key_exists($type, $this->main)) {
-            // add it if it doesn't exists
-            $this->main[$type] = array();
-        }
-
-        // apply active keys
-        $nav = $this->active($this->main[$type]);
-
-        // fix up and spit out the nav bar
-        return $this->process($nav);
-    }
-
-    /**
-     * Get the bar navigation array.
-     *
-     * @param  string  $type
-     * @return array
-     */
-    public function getBar($type = 'default')
-    {
-        // fire event that can be hooked to add items to the nav bar
-        $this->events->fire('navigation.bar', array(array('type' => $type)));
-
-        // check if the type exists in the bar array
-        if ($type !== 'default' && !array_key_exists($type, $this->bar)) {
-            // use the default type
-            $type = 'default';
-        }
-
-        if (!array_key_exists($type, $this->bar)) {
-            // add it if it doesn't exists
-            $this->bar[$type] = array();
-        }
-
-        // don't apply active keys
-        $nav = $this->bar[$type];
-
-        // fix up and spit out the nav bar
-        return $this->process($nav);
-    }
-
-    /**
      * Add an item to the main navigation array.
      *
      * @param  array   $item
-     * @param  string  $type
+     * @param  string  $name
      * @param  bool    $first
      * @return $this
      */
-    public function addMain(array $item, $type = 'default', $first = false)
+    public function addToMain(array $item, $name = 'default', $first = false)
     {
-        // check if the type exists in the main array
-        if (!array_key_exists($type, $this->main)) {
+        // check if the name exists in the main array
+        if (!array_key_exists($name, $this->main)) {
             // add it if it doesn't exists
-            $this->main[$type] = array();
+            $this->main[$name] = array();
         }
 
         // check if we are forcing the item to the start
         if ($first) {
             // add the item to the start of the array
-            $this->main[$type] = array_merge(array($item), $this->main[$type]);
+            $this->main[$name] = array_merge(array($item), $this->main[$name]);
         } else {
             // add the item to the end of the array
-            $this->main[$type][] = $item;
+            $this->main[$name][] = $item;
         }
 
         return $this;
@@ -190,25 +132,25 @@ class Navigation
      * Add an item to the bar navigation array.
      *
      * @param  array   $item
-     * @param  string  $type
+     * @param  string  $name
      * @param  bool    $first
      * @return $this
      */
-    public function addBar(array $item, $type = 'default', $first = false)
+    public function addToBar(array $item, $name = 'default', $first = false)
     {
-        // check if the type exists in the bar array
-        if (!array_key_exists($type, $this->bar)) {
+        // check if the name exists in the bar array
+        if (!array_key_exists($name, $this->bar)) {
             // add it if it doesn't exists
-            $this->bar[$type] = array();
+            $this->bar[$name] = array();
         }
 
         // check if we are forcing the item to the start
         if ($first) {
             // add the item to the start of the array
-            $this->bar[$type] = array_merge(array($item), $this->bar[$type]);
+            $this->bar[$name] = array_merge(array($item), $this->bar[$name]);
         } else {
             // add the item to the end of the array
-            $this->bar[$type][] = $item;
+            $this->bar[$name][] = $item;
         }
 
         return $this;
@@ -217,17 +159,17 @@ class Navigation
     /**
      * Get the navigation bar html.
      *
-     * @param  string  $maintype
-     * @param  string|bool   $bartype
+     * @param  string  $mainname
+     * @param  string|bool   $barname
      * @param  array  $data
      * @return string
      */
-    public function getHTML($maintype = 'default', $bartype = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true))
+    public function render($mainname = 'default', $barname = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true))
     {
         // get the nav bar arrays
-        $mainnav = $this->getMain($maintype);
-        if ($bartype) {
-            $barnav = $this->getBar($bartype);
+        $mainnav = $this->getMain($mainname);
+        if ($barname) {
+            $barnav = $this->getBar($barname);
             if (empty($barnav)) {
                 $barnav = false;
             }
@@ -237,6 +179,64 @@ class Navigation
 
         // return the html nav bar
         return $this->view->make($this->name, array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
+    }
+
+    /**
+     * Get the main navigation array.
+     *
+     * @param  string  $name
+     * @return array
+     */
+    protected function getMain($name = 'default')
+    {
+        // fire event that can be hooked to add items to the nav bar
+        $this->events->fire('navigation.main', array(array('name' => $name)));
+
+        // check if the name exists in the main array
+        if ($name !== 'default' && !array_key_exists($name, $this->main)) {
+            // use the default name
+            $name = 'default';
+        }
+
+        if (!array_key_exists($name, $this->main)) {
+            // add it if it doesn't exists
+            $this->main[$name] = array();
+        }
+
+        // apply active keys
+        $nav = $this->active($this->main[$name]);
+
+        // fix up and spit out the nav bar
+        return $this->process($nav);
+    }
+
+    /**
+     * Get the bar navigation array.
+     *
+     * @param  string  $name
+     * @return array
+     */
+    protected function getBar($name = 'default')
+    {
+        // fire event that can be hooked to add items to the nav bar
+        $this->events->fire('navigation.bar', array(array('name' => $name)));
+
+        // check if the name exists in the bar array
+        if ($name !== 'default' && !array_key_exists($name, $this->bar)) {
+            // use the default name
+            $name = 'default';
+        }
+
+        if (!array_key_exists($name, $this->bar)) {
+            // add it if it doesn't exists
+            $this->bar[$name] = array();
+        }
+
+        // don't apply active keys
+        $nav = $this->bar[$name];
+
+        // fix up and spit out the nav bar
+        return $this->process($nav);
     }
 
     /**

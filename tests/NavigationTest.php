@@ -17,6 +17,7 @@
 namespace GrahamCampbell\Tests\Navigation;
 
 use Mockery;
+use ReflectionClass;
 use Illuminate\Http\Request;
 use GrahamCampbell\Navigation\Navigation;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
@@ -36,12 +37,12 @@ class NavigationTest extends AbstractTestBenchTestCase
     {
         $navigation = $this->getNavigation();
 
-        $navigation->addMain(array('title' => 'Test', 'slug' => 'test'), 'default', false);
-        $navigation->addMain(array('title' => 'Next', 'slug' => 'next'), 'default', true);
-        $navigation->addMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'default');
+        $navigation->addToMain(array('title' => 'Test', 'slug' => 'test'), 'default', false);
+        $navigation->addToMain(array('title' => 'Next', 'slug' => 'next'), 'default', true);
+        $navigation->addToMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'default');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
-            ->with('navigation.main', array(array('type' => 'default')));
+            ->with('navigation.main', array(array('name' => 'default')));
 
         $navigation->getRequest()->shouldReceive('is')->times(3)
             ->andReturn(true, false);
@@ -49,7 +50,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation->getUrl()->shouldReceive('to')->twice()
             ->andReturn('http://laravel.com/next', 'http://laravel.com/test');
 
-        $return = $navigation->getMain('default');
+        $return = $this->callProtected($navigation, 'getMain', array('default'));
 
         $expected = array(
             array('title' => 'Next', 'url' => 'http://laravel.com/next', 'active' => true),
@@ -64,12 +65,12 @@ class NavigationTest extends AbstractTestBenchTestCase
     {
         $navigation = $this->getNavigation();
 
-        $navigation->addMain(array('title' => 'Test', 'slug' => 'test'), 'other', false);
-        $navigation->addMain(array('title' => 'Next', 'slug' => 'next'), 'other', true);
-        $navigation->addMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'other');
+        $navigation->addToMain(array('title' => 'Test', 'slug' => 'test'), 'other', false);
+        $navigation->addToMain(array('title' => 'Next', 'slug' => 'next'), 'other', true);
+        $navigation->addToMain(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'other');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
-            ->with('navigation.main', array(array('type' => 'other')));
+            ->with('navigation.main', array(array('name' => 'other')));
 
         $navigation->getRequest()->shouldReceive('is')->times(3)
             ->andReturn(true, false);
@@ -77,7 +78,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation->getUrl()->shouldReceive('to')->twice()
             ->andReturn('http://laravel.com/next', 'http://laravel.com/test');
 
-        $return = $navigation->getMain('other');
+        $return = $this->callProtected($navigation, 'getMain', array('other'));
 
         $expected = array(
             array('title' => 'Next', 'url' => 'http://laravel.com/next', 'active' => true),
@@ -93,9 +94,9 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation = $this->getNavigation();
 
         $navigation->getEvents()->shouldReceive('fire')->once()
-            ->with('navigation.main', array(array('type' => 'empty')));
+            ->with('navigation.main', array(array('name' => 'empty')));
 
-        $return = $navigation->getMain('empty');
+        $return = $this->callProtected($navigation, 'getMain', array('empty'));
 
         $expected = array();
 
@@ -106,17 +107,17 @@ class NavigationTest extends AbstractTestBenchTestCase
     {
         $navigation = $this->getNavigation();
 
-        $navigation->addBar(array('title' => 'Test', 'slug' => 'test'), 'default', false);
-        $navigation->addBar(array('title' => 'Next', 'slug' => 'next'), 'default', true);
-        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'default');
+        $navigation->addToBar(array('title' => 'Test', 'slug' => 'test'), 'default', false);
+        $navigation->addToBar(array('title' => 'Next', 'slug' => 'next'), 'default', true);
+        $navigation->addToBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'default');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
-            ->with('navigation.bar', array(array('type' => 'default')));
+            ->with('navigation.bar', array(array('name' => 'default')));
 
         $navigation->getUrl()->shouldReceive('to')->twice()
             ->andReturn('http://laravel.com/next', 'http://laravel.com/test');
 
-        $return = $navigation->getBar('default');
+        $return = $this->callProtected($navigation, 'getBar', array('default'));
 
         $expected = array(
             array('title' => 'Next', 'url' => 'http://laravel.com/next'),
@@ -131,17 +132,17 @@ class NavigationTest extends AbstractTestBenchTestCase
     {
         $navigation = $this->getNavigation();
 
-        $navigation->addBar(array('title' => 'Test', 'slug' => 'test'), 'other', false);
-        $navigation->addBar(array('title' => 'Next', 'slug' => 'next'), 'other', true);
-        $navigation->addBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'other');
+        $navigation->addToBar(array('title' => 'Test', 'slug' => 'test'), 'other', false);
+        $navigation->addToBar(array('title' => 'Next', 'slug' => 'next'), 'other', true);
+        $navigation->addToBar(array('title' => 'Laravel', 'url' => 'http://laravel.com/url'), 'other');
 
         $navigation->getEvents()->shouldReceive('fire')->once()
-            ->with('navigation.bar', array(array('type' => 'other')));
+            ->with('navigation.bar', array(array('name' => 'other')));
 
         $navigation->getUrl()->shouldReceive('to')->twice()
             ->andReturn('http://laravel.com/next', 'http://laravel.com/test');
 
-        $return = $navigation->getBar('other');
+        $return = $this->callProtected($navigation, 'getBar', array('other'));
 
         $expected = array(
             array('title' => 'Next', 'url' => 'http://laravel.com/next'),
@@ -157,29 +158,29 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation = $this->getNavigation();
 
         $navigation->getEvents()->shouldReceive('fire')->once()
-            ->with('navigation.bar', array(array('type' => 'empty')));
+            ->with('navigation.bar', array(array('name' => 'empty')));
 
-        $return = $navigation->getBar('empty');
+        $return = $this->callProtected($navigation, 'getBar', array('empty'));
 
         $expected = array();
 
         $this->assertEquals($expected, $return);
     }
 
-    public function testAddMain()
+    public function testAddToMain()
     {
         $navigation = $this->getNavigation();
 
-        $return = $navigation->addMain(array('title' => 'Test', 'slug' => 'test'));
+        $return = $navigation->addToMain(array('title' => 'Test', 'slug' => 'test'));
 
         $this->assertEquals($navigation, $return);
     }
 
-    public function testAddBar()
+    public function testAddToBar()
     {
         $navigation = $this->getNavigation();
 
-        $return = $navigation->addBar(array('title' => 'Test', 'slug' => 'test'));
+        $return = $navigation->addToBar(array('title' => 'Test', 'slug' => 'test'));
 
         $this->assertEquals($navigation, $return);
     }
@@ -202,7 +203,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
-        $return = $navigation->getHTML('default', false);
+        $return = $navigation->render('default', false);
 
         $this->assertEquals($return, 'html goes here');
     }
@@ -227,7 +228,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
-        $return = $navigation->getHTML('default', 'default');
+        $return = $navigation->render('default', 'default');
 
         $this->assertEquals($return, 'html goes here');
     }
@@ -253,7 +254,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation->getView()->shouldReceive('make')->once()
             ->with('view', $data)->andReturn('html goes here');
 
-        $return = $navigation->getHTML('default', 'default');
+        $return = $navigation->render('default', 'default');
 
         $this->assertEquals($return, 'html goes here');
     }
@@ -290,6 +291,17 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $params = array($events, $request, $url, $view, 'view');
 
-        return Mockery::mock('GrahamCampbell\Navigation\Navigation[getMain,getBar]', $params);
+        return Mockery::mock('GrahamCampbell\Navigation\Navigation[getMain,getBar]', $params)
+            ->shouldAllowMockingProtectedMethods();
+    }
+
+    protected function callProtected($object, $name, array $args = array())
+    {
+        $reflection = new ReflectionClass($object);
+
+        $method = $reflection->getMethod($name);
+        $method->setAccessible(true);
+
+        return $method->invokeArgs($object, $args);
     }
 }
