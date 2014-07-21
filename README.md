@@ -46,7 +46,7 @@ The third method is `'render'`, and accepts three arguments. All arguments are o
 
 Note that the navigation bar referred to as `'main'` is the navigation bar that will go across the top of your page, and the navigation bar referred to as `'bar'` is the navigation bar that will be a dropdown at the side. These are also referred to in the context of the default view provided with this package (for Twitter Bootstrap 3).
 
-Also note that the render method will emit events so you can call the addTo methods lazily. The events emitted are `'navigation.main'` and 'navigation.bar'`, which are emitted just before the render method starts to deal with the each navigation bar. The name of the selected navigation bar is also emitted. See the [source]() for more information.
+Also note that the render method will emit events so you can call the addTo methods lazily. The events emitted are `'navigation.main'` and `'navigation.bar'`, which are emitted just before the render method starts to deal with the each navigation bar. The name of the selected navigation bar is also emitted. Check out the [source](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/src/Navigation.php).
 
 ##### Facades\Navigation
 
