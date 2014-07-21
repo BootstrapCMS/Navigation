@@ -169,7 +169,8 @@ class Navigation
         // get the nav bar arrays
         $mainnav = $this->getMain($mainname);
         if ($barname) {
-            if (empty($barnav = $this->getBar($barname))) {
+            $barnav = $this->getBar($barname);
+            if (empty($barnav)) {
                 $barnav = false;
             }
         } else {
