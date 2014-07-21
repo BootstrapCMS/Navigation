@@ -2,7 +2,12 @@ CHANGE LOG
 ==========
 
 
-## V0.4 Alpha (Upcoming - July 2014)
+## V1.0 Beta 1 (Upcoming)
+
+* A more intelligent public api
+
+
+## V0.4 Alpha (21/07/2014)
 
 * Upgrade to Laravel 4.2+
 * Removed htmlmin dependency
