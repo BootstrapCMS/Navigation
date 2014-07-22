@@ -5,6 +5,7 @@ CHANGE LOG
 ## V1.0 Beta 1 (Upcoming)
 
 * A more intelligent public api
+* Tweaked the render method
 
 
 ## V0.4 Alpha (21/07/2014)
