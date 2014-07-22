@@ -164,11 +164,14 @@ class Navigation
      * @param  array  $data
      * @return string
      */
-    public function render($mainname = 'default', $barname = false, array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true))
-    {
+    public function render(
+        $mainname = 'default',
+        $barname = false,
+        array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)
+    ) {
         // get the nav bar arrays
         $mainnav = $this->getMain($mainname);
-        if ($barname) {
+        if (is_string($barname)) {
             $barnav = $this->getBar($barname);
             if (empty($barnav)) {
                 $barnav = false;
