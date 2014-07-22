@@ -16,10 +16,10 @@
 
 namespace GrahamCampbell\Navigation;
 
-use Illuminate\Http\Request;
-use Illuminate\View\Factory;
 use Illuminate\Events\Dispatcher;
+use Illuminate\Http\Request;
 use Illuminate\Routing\UrlGenerator;
+use Illuminate\View\Factory;
 
 /**
  * This is the navigation class.
@@ -178,7 +178,7 @@ class Navigation
         }
 
         // return the html nav bar
-        return $this->view->make($this->name, array_merge($data, array('main' => $mainnav, 'bar' => $barnav)));
+        return $this->view->make($this->name, array_merge($data, array('main' => $mainnav, 'bar' => $barnav)))->render();
     }
 
     /**
@@ -320,7 +320,7 @@ class Navigation
      */
     public function setRequest(Request $request)
     {
-        return $this->request = $request;
+        $this->request = $request;
     }
 
     /**
