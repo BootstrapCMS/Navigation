@@ -159,29 +159,29 @@ class Navigation
     /**
      * Get the navigation bar html.
      *
-     * @param  string  $mainname
-     * @param  string|bool   $barname
+     * @param  string  $mainName
+     * @param  string|bool   $barName
      * @param  array  $data
      * @return string
      */
     public function render(
-        $mainname = 'default',
-        $barname = false,
+        $mainName = 'default',
+        $barName = false,
         array $data = array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)
     ) {
         // get the nav bar arrays
-        $mainnav = $this->getMain($mainname);
-        if (is_string($barname)) {
-            $barnav = $this->getBar($barname);
-            if (empty($barnav)) {
-                $barnav = false;
+        $main = $this->getMain($mainName);
+        if (is_string($barName)) {
+            $bar = $this->getBar($barName);
+            if (empty($bar)) {
+                $bar = false;
             }
         } else {
-            $barnav = false;
+            $bar = false;
         }
 
         // return the html nav bar
-        return $this->view->make($this->name, array_merge($data, array('main' => $mainnav, 'bar' => $barnav)))->render();
+        return $this->view->make($this->name, array_merge($data, array('main' => $main, 'bar' => $bar)))->render();
     }
 
     /**
