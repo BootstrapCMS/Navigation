@@ -201,7 +201,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         );
 
         $navigation->getView()->shouldReceive('make')->once()
-            ->with('view', $data)->andReturn('html goes here');
+            ->with('view', $data)->andReturn($this->getMockedView());
 
         $return = $navigation->render('default', false);
 
@@ -226,7 +226,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         );
 
         $navigation->getView()->shouldReceive('make')->once()
-            ->with('view', $data)->andReturn('html goes here');
+            ->with('view', $data)->andReturn($this->getMockedView());
 
         $return = $navigation->render('default', 'default');
 
@@ -252,7 +252,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         );
 
         $navigation->getView()->shouldReceive('make')->once()
-            ->with('view', $data)->andReturn('html goes here');
+            ->with('view', $data)->andReturn($this->getMockedView());
 
         $return = $navigation->render('default', 'default');
 
@@ -293,6 +293,15 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         return Mockery::mock('GrahamCampbell\Navigation\Navigation[getMain,getBar]', $params)
             ->shouldAllowMockingProtectedMethods();
+    }
+
+    protected function getMockedView()
+    {
+        $view = Mockery::mock('Illuminate\View\View');
+
+        $view->shouldReceive('render')->once()->andReturn('html goes here');
+
+        return $view;
     }
 
     protected function callProtected($object, $name, array $args = array())
