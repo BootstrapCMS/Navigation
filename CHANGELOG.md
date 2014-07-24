@@ -2,10 +2,11 @@ CHANGE LOG
 ==========
 
 
-## V1.0 Beta 1 (Upcoming)
+## V1.0 Beta 1 (24/07/2014)
 
 * A more intelligent public api
 * Tweaked the render method
+* Minor fixes and tweaks
 
 
 ## V0.4 Alpha (21/07/2014)
