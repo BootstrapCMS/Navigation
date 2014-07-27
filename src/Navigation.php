@@ -24,71 +24,70 @@ use Illuminate\View\Factory;
 /**
  * This is the navigation class.
  *
- * @package    Laravel-Navigation
- * @author     Graham Campbell
- * @copyright  Copyright 2013-2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Navigation
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2013-2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/LICENSE.md> Apache 2.0
  */
 class Navigation
 {
     /**
      * The items in the main nav bar.
      *
-     * @var array
+     * @type array
      */
     protected $main = array();
 
     /**
      * The items in the bar nav bar.
      *
-     * @var array
+     * @type array
      */
     protected $bar = array();
 
     /**
      * The events instance.
      *
-     * @var \Illuminate\Events\Dispatcher
+     * @type \Illuminate\Events\Dispatcher
      */
     protected $events;
 
     /**
      * The request instance.
      *
-     * @var \Illuminate\Http\Request
+     * @type \Illuminate\Http\Request
      */
     protected $request;
 
     /**
      * The url instance.
      *
-     * @var \Illuminate\Routing\UrlGenerator
+     * @type \Illuminate\Routing\UrlGenerator
      */
     protected $url;
 
     /**
      * The view instance.
      *
-     * @var \Illuminate\View\Factory
+     * @type \Illuminate\View\Factory
      */
     protected $view;
 
     /**
      * The view name.
      *
-     * @var string
+     * @type string
      */
     protected $name;
 
     /**
      * Create a new instance.
      *
-     * @param  \Illuminate\Events\Dispatcher  $events
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Routing\UrlGenerator  $url
-     * @param  \Illuminate\View\Factory  $view
-     * @param  string  $name
+     * @param \Illuminate\Events\Dispatcher    $events
+     * @param \Illuminate\Http\Request         $request
+     * @param \Illuminate\Routing\UrlGenerator $url
+     * @param \Illuminate\View\Factory         $view
+     * @param string                           $name
+     *
      * @return void
      */
     public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, Factory $view, $name)
@@ -103,9 +102,10 @@ class Navigation
     /**
      * Add an item to the main navigation array.
      *
-     * @param  array   $item
-     * @param  string  $name
-     * @param  bool    $first
+     * @param array  $item
+     * @param string $name
+     * @param bool   $first
+     *
      * @return $this
      */
     public function addToMain(array $item, $name = 'default', $first = false)
@@ -131,9 +131,10 @@ class Navigation
     /**
      * Add an item to the bar navigation array.
      *
-     * @param  array   $item
-     * @param  string  $name
-     * @param  bool    $first
+     * @param array  $item
+     * @param string $name
+     * @param bool   $first
+     *
      * @return $this
      */
     public function addToBar(array $item, $name = 'default', $first = false)
@@ -159,9 +160,10 @@ class Navigation
     /**
      * Get the navigation bar html.
      *
-     * @param  string  $mainName
-     * @param  string|bool   $barName
-     * @param  array  $data
+     * @param string      $mainName
+     * @param string|bool $barName
+     * @param array       $data
+     *
      * @return string
      */
     public function render(
@@ -187,7 +189,8 @@ class Navigation
     /**
      * Get the main navigation array.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return array
      */
     protected function getMain($name = 'default')
@@ -216,7 +219,8 @@ class Navigation
     /**
      * Get the bar navigation array.
      *
-     * @param  string  $name
+     * @param string $name
+     *
      * @return array
      */
     protected function getBar($name = 'default')
@@ -245,7 +249,8 @@ class Navigation
     /**
      * Check if each item is active.
      *
-     * @param  array  $nav
+     * @param array $nav
+     *
      * @return array
      */
     protected function active(array $nav)
@@ -275,7 +280,8 @@ class Navigation
     /**
      * Convert slugs to urls.
      *
-     * @param  array  $nav
+     * @param array $nav
+     *
      * @return array
      */
     protected function process(array $nav)
@@ -318,7 +324,8 @@ class Navigation
     /**
      * Set the request instance.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return void
      */
     public function setRequest(Request $request)
