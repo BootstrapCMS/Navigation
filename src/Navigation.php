@@ -33,49 +33,49 @@ class Navigation
     /**
      * The items in the main nav bar.
      *
-     * @type array
+     * @var array
      */
     protected $main = array();
 
     /**
      * The items in the bar nav bar.
      *
-     * @type array
+     * @var array
      */
     protected $bar = array();
 
     /**
      * The events instance.
      *
-     * @type \Illuminate\Events\Dispatcher
+     * @var \Illuminate\Events\Dispatcher
      */
     protected $events;
 
     /**
      * The request instance.
      *
-     * @type \Illuminate\Http\Request
+     * @var \Illuminate\Http\Request
      */
     protected $request;
 
     /**
      * The url instance.
      *
-     * @type \Illuminate\Routing\UrlGenerator
+     * @var \Illuminate\Routing\UrlGenerator
      */
     protected $url;
 
     /**
      * The view instance.
      *
-     * @type \Illuminate\View\Factory
+     * @var \Illuminate\View\Factory
      */
     protected $view;
 
     /**
      * The view name.
      *
-     * @type string
+     * @var string
      */
     protected $name;
 
