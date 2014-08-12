@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V1.0 (12/08/2014)
+
+* Corrected the license comments
+* Other minor tweaks
+
+
 ## V1.0 Beta 1 (24/07/2014)
 
 * A more intelligent public api
