@@ -56,7 +56,7 @@ class NavigationTest extends AbstractTestBenchTestCase
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
         );
 
-        $this->assertEquals($expected, $return);
+        $this->assertSame($expected, $return);
     }
 
     public function testMainOther()
@@ -84,7 +84,7 @@ class NavigationTest extends AbstractTestBenchTestCase
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
         );
 
-        $this->assertEquals($expected, $return);
+        $this->assertSame($expected, $return);
     }
 
     public function testMainEmpty()
@@ -98,7 +98,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $expected = array();
 
-        $this->assertEquals($expected, $return);
+        $this->assertSame($expected, $return);
     }
 
     public function testBarDefault()
@@ -123,7 +123,7 @@ class NavigationTest extends AbstractTestBenchTestCase
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url')
         );
 
-        $this->assertEquals($expected, $return);
+        $this->assertSame($expected, $return);
     }
 
     public function testBarOther()
@@ -148,7 +148,7 @@ class NavigationTest extends AbstractTestBenchTestCase
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url')
         );
 
-        $this->assertEquals($expected, $return);
+        $this->assertSame($expected, $return);
     }
 
     public function testBarEmpty()
@@ -162,7 +162,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $expected = array();
 
-        $this->assertEquals($expected, $return);
+        $this->assertSame($expected, $return);
     }
 
     public function testAddToMain()
@@ -171,7 +171,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $return = $navigation->addToMain(array('title' => 'Test', 'slug' => 'test'));
 
-        $this->assertEquals($navigation, $return);
+        $this->assertSame($navigation, $return);
     }
 
     public function testAddToBar()
@@ -180,7 +180,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $return = $navigation->addToBar(array('title' => 'Test', 'slug' => 'test'));
 
-        $this->assertEquals($navigation, $return);
+        $this->assertSame($navigation, $return);
     }
 
     public function testGetHTMLNoBar()
@@ -203,7 +203,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $return = $navigation->render('default', false);
 
-        $this->assertEquals($return, 'html goes here');
+        $this->assertSame('html goes here', $return);
     }
 
     public function testGetHTMLEmptyBar()
@@ -228,7 +228,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $return = $navigation->render('default', 'default');
 
-        $this->assertEquals($return, 'html goes here');
+        $this->assertSame('html goes here', $return);
     }
 
     public function testGetHTMLWithBar()
@@ -254,7 +254,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $return = $navigation->render('default', 'default');
 
-        $this->assertEquals($return, 'html goes here');
+        $this->assertSame('html goes here', $return);
     }
 
     public function testSetRequest()
@@ -267,7 +267,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
         $return = $navigation->getRequest();
 
-        $this->assertEquals($request, $return);
+        $this->assertSame($request, $return);
     }
 
     protected function getNavigation()
