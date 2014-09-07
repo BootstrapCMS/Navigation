@@ -51,8 +51,8 @@ class NavigationTest extends AbstractTestBenchTestCase
         $return = $this->callProtected($navigation, 'getMain', array('default'));
 
         $expected = array(
-            array('title' => 'Next', 'url' => 'http://laravel.com/next', 'active' => true),
-            array('title' => 'Test', 'url' => 'http://laravel.com/test', 'active' => false),
+            array('title' => 'Next', 'active' => true, 'url' => 'http://laravel.com/next'),
+            array('title' => 'Test', 'active' => false, 'url' => 'http://laravel.com/test'),
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
         );
 
@@ -79,8 +79,8 @@ class NavigationTest extends AbstractTestBenchTestCase
         $return = $this->callProtected($navigation, 'getMain', array('other'));
 
         $expected = array(
-            array('title' => 'Next', 'url' => 'http://laravel.com/next', 'active' => true),
-            array('title' => 'Test', 'url' => 'http://laravel.com/test', 'active' => false),
+            array('title' => 'Next', 'active' => true, 'url' => 'http://laravel.com/next'),
+            array('title' => 'Test', 'active' => false, 'url' => 'http://laravel.com/test'),
             array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
         );
 

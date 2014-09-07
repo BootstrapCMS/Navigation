@@ -22,7 +22,7 @@
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">./src</directory>
             <exclude>
-                <directory>./src/config</directory>
+                <directory>./src/views</directory>
             </exclude>
         </whitelist>
     </filter>
