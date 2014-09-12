@@ -17,7 +17,7 @@ CHANGE LOG
 
 ## V0.4 Alpha (21/07/2014)
 
-* Upgrade to Laravel 4.2+
+* Upgrade to Laravel 4.2
 * Removed htmlmin dependency
 * Minor refactoring
 * Added di aliases
