@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.0.1 (Upcoming)
+
+* Improved the test suite
+
+
 ## V1.0 (12/08/2014)
 
 * Corrected the license comments
