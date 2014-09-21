@@ -16,10 +16,10 @@
 
 namespace GrahamCampbell\Navigation;
 
-use Illuminate\Events\Dispatcher;
+use Illuminate\Contracts\Events\Dispatcher;
+use Illuminate\Contracts\Routing\UrlGenerator;
+use Illuminate\Contracts\View\Factory;
 use Illuminate\Http\Request;
-use Illuminate\Routing\UrlGenerator;
-use Illuminate\View\Factory;
 
 /**
  * This is the navigation class.
@@ -45,13 +45,6 @@ class Navigation
     protected $bar = array();
 
     /**
-     * The events instance.
-     *
-     * @var \Illuminate\Events\Dispatcher
-     */
-    protected $events;
-
-    /**
      * The request instance.
      *
      * @var \Illuminate\Http\Request
@@ -59,16 +52,23 @@ class Navigation
     protected $request;
 
     /**
+     * The events instance.
+     *
+     * @var \Illuminate\Contracts\Events\Dispatcher
+     */
+    protected $events;
+
+    /**
      * The url instance.
      *
-     * @var \Illuminate\Routing\UrlGenerator
+     * @var \Illuminate\Contracts\Routing\UrlGenerator
      */
     protected $url;
 
     /**
      * The view instance.
      *
-     * @var \Illuminate\View\Factory
+     * @var \Illuminate\Contracts\View\Factory
      */
     protected $view;
 
@@ -82,18 +82,18 @@ class Navigation
     /**
      * Create a new instance.
      *
-     * @param \Illuminate\Events\Dispatcher    $events
-     * @param \Illuminate\Http\Request         $request
-     * @param \Illuminate\Routing\UrlGenerator $url
-     * @param \Illuminate\View\Factory         $view
-     * @param string                           $name
+     * @param \Illuminate\Http\Request                   $request
+     * @param \Illuminate\Contracts\Events\Dispatcher    $events
+     * @param \Illuminate\Contracts\Routing\UrlGenerator $url
+     * @param \Illuminate\Contracts\View\Factory         $view
+     * @param string                                     $name
      *
      * @return void
      */
-    public function __construct(Dispatcher $events, Request $request, UrlGenerator $url, Factory $view, $name)
+    public function __construct(Request $request, Dispatcher $events, UrlGenerator $url, Factory $view, $name)
     {
-        $this->events = $events;
         $this->request = $request;
+        $this->events = $events;
         $this->url = $url;
         $this->view = $view;
         $this->name = $name;
@@ -302,16 +302,6 @@ class Navigation
     }
 
     /**
-     * Get the events instance.
-     *
-     * @return \Illuminate\Events\Dispatcher
-     */
-    public function getEvents()
-    {
-        return $this->events;
-    }
-
-    /**
      * Get the request instance.
      *
      * @return \Illuminate\Http\Request
@@ -334,9 +324,19 @@ class Navigation
     }
 
     /**
+     * Get the events instance.
+     *
+     * @return \Illuminate\Contracts\Events\Dispatcher
+     */
+    public function getEvents()
+    {
+        return $this->events;
+    }
+
+    /**
      * Get the url instance.
      *
-     * @return \Illuminate\Routing\UrlGenerator
+     * @return \Illuminate\Contracts\Routing\UrlGenerator
      */
     public function getUrl()
     {
@@ -346,7 +346,7 @@ class Navigation
     /**
      * Get the view instance.
      *
-     * @return \Illuminate\View\Factory
+     * @return \Illuminate\Contracts\View\Factory
      */
     public function getView()
     {

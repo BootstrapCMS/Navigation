@@ -272,22 +272,22 @@ class NavigationTest extends AbstractTestBenchTestCase
 
     protected function getNavigation()
     {
-        $events = Mockery::mock('Illuminate\Events\Dispatcher');
         $request = Mockery::mock('Illuminate\Http\Request');
-        $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
-        $view = Mockery::mock('Illuminate\View\Factory');
+        $events = Mockery::mock('Illuminate\Contracts\Events\Dispatcher');
+        $url = Mockery::mock('Illuminate\Contracts\Routing\UrlGenerator');
+        $view = Mockery::mock('Illuminate\Contracts\View\Factory');
 
-        return new Navigation($events, $request, $url, $view, 'view');
+        return new Navigation($request, $events, $url, $view, 'view');
     }
 
     protected function getMockedNavigation()
     {
-        $events = Mockery::mock('Illuminate\Events\Dispatcher');
         $request = Mockery::mock('Illuminate\Http\Request');
-        $url = Mockery::mock('Illuminate\Routing\UrlGenerator');
-        $view = Mockery::mock('Illuminate\View\Factory');
+        $events = Mockery::mock('Illuminate\Contracts\Events\Dispatcher');
+        $url = Mockery::mock('Illuminate\Contracts\Routing\UrlGenerator');
+        $view = Mockery::mock('Illuminate\Contracts\View\Factory');
 
-        $params = array($events, $request, $url, $view, 'view');
+        $params = array($request, $events, $url, $view, 'view');
 
         return Mockery::mock('GrahamCampbell\Navigation\Navigation[getMain,getBar]', $params)
             ->shouldAllowMockingProtectedMethods();
@@ -295,7 +295,7 @@ class NavigationTest extends AbstractTestBenchTestCase
 
     protected function getMockedView()
     {
-        $view = Mockery::mock('Illuminate\View\View');
+        $view = Mockery::mock('Illuminate\Contracts\View\View');
 
         $view->shouldReceive('render')->once()->andReturn('html goes here');
 

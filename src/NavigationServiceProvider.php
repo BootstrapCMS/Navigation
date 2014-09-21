@@ -62,13 +62,13 @@ class NavigationServiceProvider extends ServiceProvider
     protected function registerNavigation()
     {
         $this->app->bindShared('navigation', function ($app) {
-            $events = $app['events'];
             $request = $app['request'];
+            $events = $app['events'];
             $url = $app['url'];
             $view = $app['view'];
             $name = 'graham-campbell/navigation::bootstrap';
 
-            $navigation = new Navigation($events, $request, $url, $view, $name);
+            $navigation = new Navigation($request, $events, $url, $view, $name);
             $app->refresh('request', $navigation, 'setRequest');
             return $navigation;
         });
