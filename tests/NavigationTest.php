@@ -16,11 +16,11 @@
 
 namespace GrahamCampbell\Tests\Navigation;
 
-use Mockery;
-use ReflectionClass;
-use Illuminate\Http\Request;
 use GrahamCampbell\Navigation\Navigation;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use Illuminate\Http\Request;
+use Mockery;
+use ReflectionClass;
 
 /**
  * This is the navigation class test class.
@@ -53,7 +53,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $expected = array(
             array('title' => 'Next', 'active' => true, 'url' => 'http://laravel.com/next'),
             array('title' => 'Test', 'active' => false, 'url' => 'http://laravel.com/test'),
-            array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false),
         );
 
         $this->assertSame($expected, $return);
@@ -81,7 +81,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $expected = array(
             array('title' => 'Next', 'active' => true, 'url' => 'http://laravel.com/next'),
             array('title' => 'Test', 'active' => false, 'url' => 'http://laravel.com/test'),
-            array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false)
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url', 'active' => false),
         );
 
         $this->assertSame($expected, $return);
@@ -120,7 +120,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $expected = array(
             array('title' => 'Next', 'url' => 'http://laravel.com/next'),
             array('title' => 'Test', 'url' => 'http://laravel.com/test'),
-            array('title' => 'Laravel', 'url' => 'http://laravel.com/url')
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url'),
         );
 
         $this->assertSame($expected, $return);
@@ -145,7 +145,7 @@ class NavigationTest extends AbstractTestBenchTestCase
         $expected = array(
             array('title' => 'Next', 'url' => 'http://laravel.com/next'),
             array('title' => 'Test', 'url' => 'http://laravel.com/test'),
-            array('title' => 'Laravel', 'url' => 'http://laravel.com/url')
+            array('title' => 'Laravel', 'url' => 'http://laravel.com/url'),
         );
 
         $this->assertSame($expected, $return);
@@ -195,7 +195,7 @@ class NavigationTest extends AbstractTestBenchTestCase
             'side' => 'dropdown',
             'inverse' => true,
             'main' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test')),
-            'bar' => false
+            'bar' => false,
         );
 
         $navigation->getView()->shouldReceive('make')->once()
@@ -220,7 +220,7 @@ class NavigationTest extends AbstractTestBenchTestCase
             'side' => 'dropdown',
             'inverse' => true,
             'main' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test')),
-            'bar' => array()
+            'bar' => array(),
         );
 
         $navigation->getView()->shouldReceive('make')->once()
@@ -246,7 +246,7 @@ class NavigationTest extends AbstractTestBenchTestCase
             'side' => 'dropdown',
             'inverse' => true,
             'main' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test')),
-            'bar' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test'))
+            'bar' => array(array('title' => 'Test', 'url' => 'http://laravel.com/test')),
         );
 
         $navigation->getView()->shouldReceive('make')->once()
