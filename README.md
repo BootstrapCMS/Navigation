@@ -26,11 +26,11 @@ To get the latest version of Laravel Navigation, simply add the following line t
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
-Once Laravel Navigation is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+Once Laravel Navigation is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
 * `'GrahamCampbell\Navigation\NavigationServiceProvider'`
 
-You can register the Navigation facade in the `aliases` key of your `app/config/app.php` file if you like.
+You can register the Navigation facade in the `aliases` key of your `config/app.php` file if you like.
 
 * `'Navigation' => 'GrahamCampbell\Navigation\Facades\Navigation'`
 
@@ -64,7 +64,7 @@ This facade will dynamically pass static method calls to the `'navigation'` obje
 
 ##### NavigationServiceProvider
 
-This class contains no public methods of interest. This class should be added to the providers array in `app/config/app.php`. This class will setup ioc bindings.
+This class contains no public methods of interest. This class should be added to the providers array in `config/app.php`. This class will setup ioc bindings.
 
 ##### Further Information
 
