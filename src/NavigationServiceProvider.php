@@ -61,7 +61,7 @@ class NavigationServiceProvider extends ServiceProvider
      */
     protected function registerNavigation()
     {
-        $this->app->bindShared('navigation', function ($app) {
+        $this->app->singleton('navigation', function ($app) {
             $request = $app['request'];
             $events = $app['events'];
             $url = $app['url'];
