@@ -170,7 +170,7 @@ class Navigation
     {
         // set the default value if nothing was passed
         if ($data === null) {
-            $data = ['title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true]
+            $data = ['title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true];
         }
 
         // get the nav bar arrays
