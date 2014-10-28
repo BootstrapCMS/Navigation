@@ -83,8 +83,8 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array(
+        return [
             'navigation',
-        );
+        ];
     }
 }
