@@ -162,15 +162,17 @@ class Navigation
      *
      * @param string      $mainName
      * @param string|bool $barName
-     * @param array       $data
+     * @param array|null  $data
      *
      * @return string
      */
-    public function render(
-        $mainName = 'default',
-        $barName = false,
-        array $data = ['title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true]
-    ) {
+    public function render($mainName = 'default', $barName = false, array $data = null)
+    {
+        // set the default value if nothing was passed
+        if ($data === null) {
+            $data = ['title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true]
+        }
+
         // get the nav bar arrays
         $main = $this->getMain($mainName);
         if (is_string($barName)) {
