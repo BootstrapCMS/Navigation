@@ -2,7 +2,7 @@
 
 $fixers = [
     '-yoda_conditions',
-    // 'align_double_arrow',
+    'align_double_arrow',
     'multiline_spaces_before_semicolon',
     'ordered_use',
     'short_array_syntax',
