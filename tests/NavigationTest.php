@@ -191,11 +191,11 @@ class NavigationTest extends AbstractTestBenchTestCase
             ->andReturn([['title' => 'Test', 'url' => 'http://laravel.com/test']]);
 
         $data = [
-            'title' => 'Navigation',
-            'side' => 'dropdown',
+            'title'   => 'Navigation',
+            'side'    => 'dropdown',
             'inverse' => true,
-            'main' => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
-            'bar' => false,
+            'main'    => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
+            'bar'     => false,
         ];
 
         $navigation->getView()->shouldReceive('make')->once()
@@ -216,11 +216,11 @@ class NavigationTest extends AbstractTestBenchTestCase
         $navigation->shouldReceive('getBar')->once()->with('default')->andReturn([]);
 
         $data = [
-            'title' => 'Navigation',
-            'side' => 'dropdown',
+            'title'   => 'Navigation',
+            'side'    => 'dropdown',
             'inverse' => true,
-            'main' => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
-            'bar' => [],
+            'main'    => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
+            'bar'     => [],
         ];
 
         $navigation->getView()->shouldReceive('make')->once()
@@ -242,11 +242,11 @@ class NavigationTest extends AbstractTestBenchTestCase
             ->andReturn([['title' => 'Test', 'url' => 'http://laravel.com/test']]);
 
         $data = [
-            'title' => 'Navigation',
-            'side' => 'dropdown',
+            'title'   => 'Navigation',
+            'side'    => 'dropdown',
             'inverse' => true,
-            'main' => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
-            'bar' => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
+            'main'    => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
+            'bar'     => [['title' => 'Test', 'url' => 'http://laravel.com/test']],
         ];
 
         $navigation->getView()->shouldReceive('make')->once()
