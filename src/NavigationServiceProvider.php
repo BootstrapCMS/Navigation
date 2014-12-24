@@ -70,6 +70,7 @@ class NavigationServiceProvider extends ServiceProvider
 
             $navigation = new Navigation($events, $request, $url, $view, $name);
             $app->refresh('request', $navigation, 'setRequest');
+
             return $navigation;
         });
 
@@ -83,8 +84,8 @@ class NavigationServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array(
+        return [
             'navigation',
-        );
+        ];
     }
 }
