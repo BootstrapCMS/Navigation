@@ -1,7 +1,7 @@
 Laravel Navigation
 ==================
 
-Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a navigation bar generator for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), [license](LICENSE.md), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a navigation bar generator for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), [license](LICENSE), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
 
 ![Laravel Navigation](https://cloud.githubusercontent.com/assets/2829600/4432308/c153cd00-468c-11e4-9fc0-4776b482e6ef.PNG)
 
@@ -9,7 +9,7 @@ Laravel Navigation was created by, and is maintained by [Graham Campbell](https:
 <a href="https://travis-ci.org/GrahamCampbell/Laravel-Navigation"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Navigation/master.svg?style=flat-square" alt="Build Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Navigation.svg?style=flat-square" alt="Coverage Status"></img></a>
 <a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Navigation.svg?style=flat-square" alt="Quality Score"></img></a>
-<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
 <a href="https://github.com/GrahamCampbell/Laravel-Navigation/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Navigation.svg?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
@@ -50,7 +50,7 @@ Laravel Navigation requires no configuration. Just follow the simple install ins
 
 This is the class of most interest. It is bound to the ioc container as `'navigation'` and can be accessed using the `Facades\Navigation` facade. There are three public methods of interest.
 
-The `'addToMain'` and `'addToBar'` methods will add the item to the internal main navigation array in the specified way. These methods both accept three arguments. All but the first are optional. The first argument must be an array. It must have either a `'slug'` key or a `'url'` key where the slug is the target url relative to the base url, and the url is a full url you may specify (useful to link to somewhere outside the application). It must also have a `'title'` key which will specify the title, and you may also optionally add an `'icon'` key which will at the relevant icon from font awesome to the mix. The second parameter specifies which navigation bar you want to add to. By default this is `'default'`, but you may have mutliple navigation bars, for example, [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS) has an `'admin'` navigation bar. The final parameter specifies if the item should be prepended to the internal array. By default this is `false`.
+The `'addToMain'` and `'addToBar'` methods will add the item to the internal main navigation array in the specified way. These methods both accept three arguments. All but the first are optional. The first argument must be an array. It must have either a `'slug'` key or a `'url'` key where the slug is the target url relative to the base url, and the url is a full url you may specify (useful to link to somewhere outside the application). It must also have a `'title'` key which will specify the title, and you may also optionally add an `'icon'` key which will at the relevant icon from font awesome to the mix. The second parameter specifies which navigation bar you want to add to. By default this is `'default'`, but you may have mutliple navigation bars, for example, [Bootstrap CMS](https://github.com/BootstrapCMS/CMS) has an `'admin'` navigation bar. The final parameter specifies if the item should be prepended to the internal array. By default this is `false`.
 
 The third method is `'render'`, and accepts three arguments. All arguments are optional. The fist argument selects the main navigation bar you which to return. By default this is set to `'default'`. The third argument selection the bar navigation bar you wish to return. By default this is set to `false`, where by no bar navigation is returned. You may set this to any string to return the relevant navigation bar. The final parameter is an array of variables you wish to pass to the navigation view. The default is `array('title' => 'Navigation', 'side' => 'dropdown', 'inverse' => true)`.
 
@@ -70,23 +70,7 @@ This class contains no public methods of interest. This class should be added to
 
 Feel free to check out the [API Documentation](http://docs.grahamjcampbell.co.uk) for Laravel Navigation.
 
-You may see an example of implementation in [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS).
-
 
 ## License
 
-Apache License
-
-Copyright 2013-2014 Graham Campbell
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
- http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
+Laravel Navigation is licensed under [The MIT License (MIT)](LICENSE).
