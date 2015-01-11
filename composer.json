@@ -2,7 +2,7 @@
     "name": "graham-campbell/navigation",
     "description": "Navigation Is A Navigation Bar Generator For Laravel 4.2",
     "keywords": ["laravel", "framework", "navigation generator", "navigation", "navigation bar", "Navigation", "Laravel Navigation", "Laravel-Navigation", "Graham Campbell", "GrahamCampbell"],
-    "license": "Apache-2.0",
+    "license": "MIT",
     "authors": [
         {
             "name": "Graham Campbell",
