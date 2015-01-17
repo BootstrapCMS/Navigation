@@ -11,7 +11,7 @@
 
 namespace GrahamCampbell\Navigation;
 
-use Illuminate\Support\ServiceProvider;
+use Orchestra\Support\Providers\ServiceProvider;
 
 /**
  * This is the navigation service provider class.
@@ -21,20 +21,13 @@ use Illuminate\Support\ServiceProvider;
 class NavigationServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
-    /**
-     * Bootstrap the application events.
+     * Boot the service provider.
      *
      * @return void
      */
     public function boot()
     {
-        $this->package('graham-campbell/navigation', 'graham-campbell/navigation', __DIR__);
+        $this->addViewComponent('graham-campbell/navigation', 'graham-campbell/navigation', realpath(__DIR__.'/../views'));
     }
 
     /**
