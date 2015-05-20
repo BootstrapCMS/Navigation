@@ -34,10 +34,6 @@ You can register the Navigation facade in the `aliases` key of your `config/app.
 
 * `'Navigation' => 'GrahamCampbell\Navigation\Facades\Navigation'`
 
-#### Looking for a laravel 4 compatable version?
-
-Checkout the [1.0 branch](https://github.com/GrahamCampbell/Laravel-Navigation/tree/1.0), installable by requiring `"graham-campbell/navigation": "~1.0"`.
-
 
 ## Configuration
 
