@@ -1,7 +1,7 @@
 Laravel Navigation
 ==================
 
-Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a navigation bar generator for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), [license](LICENSE), [api docs](https://docs.gjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a navigation bar generator for [Laravel 5](http://laravel.com). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
 
 ![Laravel Navigation](https://cloud.githubusercontent.com/assets/2829600/4432308/c153cd00-468c-11e4-9fc0-4776b482e6ef.PNG)
 
@@ -61,10 +61,6 @@ This facade will dynamically pass static method calls to the `'navigation'` obje
 ##### NavigationServiceProvider
 
 This class contains no public methods of interest. This class should be added to the providers array in `config/app.php`. This class will setup ioc bindings.
-
-##### Further Information
-
-Feel free to check out the [API Documentation](https://docs.gjcampbell.co.uk) for Laravel Navigation.
 
 
 ## License
