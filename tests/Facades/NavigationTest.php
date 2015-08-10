@@ -11,8 +11,10 @@
 
 namespace GrahamCampbell\Tests\Navigation\Facades;
 
-use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\TestBenchCore\FacadeTrait;
 use GrahamCampbell\Tests\Navigation\AbstractTestCase;
+use GrahamCampbell\Navigation\Facades\Navigation as NavigationFacade;
+use GrahamCampbell\Navigation\Navigation;
 
 /**
  * This is the navigation facade test class.
@@ -21,7 +23,7 @@ use GrahamCampbell\Tests\Navigation\AbstractTestCase;
  */
 class NavigationTest extends AbstractTestCase
 {
-    use FacadeTestCaseTrait;
+    use FacadeTrait;
 
     /**
      * Get the facade accessor.
@@ -40,7 +42,7 @@ class NavigationTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\Navigation\Facades\Navigation';
+        return NavigationFacade::class;
     }
 
     /**
@@ -50,6 +52,6 @@ class NavigationTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\Navigation\Navigation';
+        return Navigation::class;
     }
 }

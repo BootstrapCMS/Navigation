@@ -60,7 +60,7 @@ class NavigationServiceProvider extends ServiceProvider
             return $navigation;
         });
 
-        $this->app->alias('navigation', 'GrahamCampbell\Navigation\Navigation');
+        $this->app->alias('navigation', Navigation::class);
     }
 
     /**

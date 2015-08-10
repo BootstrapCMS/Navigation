@@ -12,6 +12,7 @@
 namespace GrahamCampbell\Tests\Navigation;
 
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
+use GrahamCampbell\Navigation\NavigationServiceProvider;
 
 /**
  * This is the abstract test case class.
@@ -29,6 +30,6 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      */
     protected function getServiceProviderClass($app)
     {
-        return 'GrahamCampbell\Navigation\NavigationServiceProvider';
+        return NavigationServiceProvider::class;
     }
 }

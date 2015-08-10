@@ -11,7 +11,8 @@
 
 namespace GrahamCampbell\Tests\Navigation;
 
-use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
+use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
+use GrahamCampbell\Navigation\Navigation;
 
 /**
  * This is the service provider test class.
@@ -20,10 +21,10 @@ use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
  */
 class ServiceProviderTest extends AbstractTestCase
 {
-    use ServiceProviderTestCaseTrait;
+    use ServiceProviderTrait;
 
     public function testNavigationIsInjectable()
     {
-        $this->assertIsInjectable('GrahamCampbell\Navigation\Navigation');
+        $this->assertIsInjectable(Navigation::class);
     }
 }
