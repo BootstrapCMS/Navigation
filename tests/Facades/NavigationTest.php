@@ -11,10 +11,10 @@
 
 namespace GrahamCampbell\Tests\Navigation\Facades;
 
-use GrahamCampbell\TestBenchCore\FacadeTrait;
-use GrahamCampbell\Tests\Navigation\AbstractTestCase;
 use GrahamCampbell\Navigation\Facades\Navigation as NavigationFacade;
 use GrahamCampbell\Navigation\Navigation;
+use GrahamCampbell\TestBenchCore\FacadeTrait;
+use GrahamCampbell\Tests\Navigation\AbstractTestCase;
 
 /**
  * This is the navigation facade test class.

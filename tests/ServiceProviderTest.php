@@ -11,8 +11,8 @@
 
 namespace GrahamCampbell\Tests\Navigation;
 
-use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 use GrahamCampbell\Navigation\Navigation;
+use GrahamCampbell\TestBenchCore\ServiceProviderTrait;
 
 /**
  * This is the service provider test class.

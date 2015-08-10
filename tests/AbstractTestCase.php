@@ -11,8 +11,8 @@
 
 namespace GrahamCampbell\Tests\Navigation;
 
-use GrahamCampbell\TestBench\AbstractPackageTestCase;
 use GrahamCampbell\Navigation\NavigationServiceProvider;
+use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 /**
  * This is the abstract test case class.
