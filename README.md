@@ -1,16 +1,16 @@
 Laravel Navigation
 ==================
 
-Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a navigation bar generator for [Laravel 5](http://laravel.com). Feel free to check out the [releases](https://github.com/GrahamCampbell/Laravel-Navigation/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Navigation was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is a navigation bar generator for [Laravel 5](http://laravel.com). Feel free to check out the [releases](https://github.com/BootstrapCMS/Navigation/releases), [license](LICENSE), and [contribution guidelines](CONTRIBUTING.md).
 
 ![Laravel Navigation](https://cloud.githubusercontent.com/assets/2829600/4432308/c153cd00-468c-11e4-9fc0-4776b482e6ef.PNG)
 
 <p align="center">
-<a href="https://travis-ci.org/GrahamCampbell/Laravel-Navigation"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Navigation/master.svg?style=flat-square" alt="Build Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Navigation.svg?style=flat-square" alt="Coverage Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Navigation"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Navigation.svg?style=flat-square" alt="Quality Score"></img></a>
+<a href="https://travis-ci.org/BootstrapCMS/Navigation"><img src="https://img.shields.io/travis/BootstrapCMS/Navigation/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/BootstrapCMS/Navigation/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/BootstrapCMS/Navigation.svg?style=flat-square" alt="Coverage Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/BootstrapCMS/Navigation"><img src="https://img.shields.io/scrutinizer/g/BootstrapCMS/Navigation.svg?style=flat-square" alt="Quality Score"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
-<a href="https://github.com/GrahamCampbell/Laravel-Navigation/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Navigation.svg?style=flat-square" alt="Latest Version"></img></a>
+<a href="https://github.com/BootstrapCMS/Navigation/releases"><img src="https://img.shields.io/github/release/BootstrapCMS/Navigation.svg?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
 
@@ -52,7 +52,7 @@ The third method is `'render'`, and accepts three arguments. All arguments are o
 
 Note that the navigation bar referred to as `'main'` is the navigation bar that will go across the top of your page, and the navigation bar referred to as `'bar'` is the navigation bar that will be a dropdown at the side. These are also referred to in the context of the default view provided with this package (for Twitter Bootstrap 3).
 
-Also note that the render method will emit events so you can call the addTo methods lazily. The events emitted are `'navigation.main'` and `'navigation.bar'`, which are emitted just before the render method starts to deal with the each navigation bar. The name of the selected navigation bar is also emitted. Check out the [source](https://github.com/GrahamCampbell/Laravel-Navigation/blob/master/src/Navigation.php).
+Also note that the render method will emit events so you can call the addTo methods lazily. The events emitted are `'navigation.main'` and `'navigation.bar'`, which are emitted just before the render method starts to deal with the each navigation bar. The name of the selected navigation bar is also emitted. Check out the [source](https://github.com/BootstrapCMS/Navigation/blob/master/src/Navigation.php).
 
 ##### Facades\Navigation
 
